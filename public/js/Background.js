@@ -1,5 +1,6 @@
 "use strict";
 
+//Background 
 function Background(){
 	var backTexture = PIXI.Texture.fromImage("img/cloud-background.png");
 
@@ -14,17 +15,16 @@ function Background(){
 	this.tilePosition.x = 0;
 	this.tilePosition.y = 0;
 	this.viewportX = 0;
+
+	//our change in tile position
+	this.DELTA_X = 0.5;
+
+	//This will move the background horizontally
+	this.setViewportX = function(newViewportX){
+		var distanceTravelled = newViewportX - this.viewportX;
+		this.viewportX = newViewportX;
+		this.tilePosition.x -= (distanceTravelled * this.DELTA_X);		
+	}
 }
 
-Background.constructor = Background;
 Background.prototype = Object.create(PIXI.extras.TilingSprite.prototype);
-
-//our change in tile position
-Background.DELTA_X = 0.5;
-
-//This will move the background horizontally
-Background.prototype.setViewportX = function(newViewportX){
-	var distanceTravelled = newViewportX - this.viewportX;
-	this.viewportX = newViewportX;
-	this.tilePosition.x -= (distanceTravelled * Background.DELTA_X);
-}
