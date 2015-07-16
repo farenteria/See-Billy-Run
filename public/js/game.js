@@ -3,7 +3,7 @@
 (function(){
 	var container;
 	var renderer;
-	var backSprite;
+	var scroller;
 
 	function init(){
 		container = new PIXI.Container(); //our stage
@@ -12,16 +12,14 @@
 			view:document.getElementById("game-canvas")
 		});
 
-		backSprite = new Background();
-		container.addChild(backSprite); //adds background to container
-
+		scroller = new Scroller(container);
 		//initial update
 		requestAnimationFrame(update);
 	}
 
 	//moves background to the left a bit, and renders every frame
 	function update(){
-		backSprite.update();
+		scroller.update();
 
 		renderer.render(container); //renders container
 		requestAnimationFrame(update); //updates every frame
