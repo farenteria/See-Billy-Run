@@ -19,7 +19,8 @@
 
 	//moves background to the left a bit, and renders every frame
 	function update(){
-		scroller.update();
+		var newViewportX = scroller.getViewportX() + 2;
+		scroller.setViewportX(newViewportX);
 
 		renderer.render(container); //renders container
 		requestAnimationFrame(update); //updates every frame

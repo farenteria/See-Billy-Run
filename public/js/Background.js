@@ -8,13 +8,16 @@ function Background(){
 	this.position.y = 0;
 	this.tilePosition.x = 0;
 	this.tilePosition.y = 0;
-
-	console.log("baseTexture heigth: " + backTexture.height);
+	this.viewportX = 0;
 }
 
 Background.constructor = Background;
 Background.prototype = Object.create(PIXI.extras.TilingSprite.prototype);
 
-Background.prototype.update = function(){
-	this.tilePosition.x -= 0.5;
+Background.DELTA_X = 0.5;
+
+Background.prototype.setViewportX = function(newViewportX){
+	var distanceTravelled = newViewportX - this.viewportX;
+	this.viewportX = newViewportX;
+	this.tilePosition.x -= (distanceTravelled * Background.DELTA_X);
 }
