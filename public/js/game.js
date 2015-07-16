@@ -21,7 +21,7 @@
 
 	//moves background to the left a bit, and renders every frame
 	function update(){
-		backSprite.tilePosition.x -= 0.5;
+		backSprite.update();
 
 		renderer.render(container); //renders container
 		requestAnimationFrame(update); //updates every frame
