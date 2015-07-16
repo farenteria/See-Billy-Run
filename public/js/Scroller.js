@@ -15,3 +15,8 @@ Scroller.prototype.setViewportX = function(viewportX){
 Scroller.prototype.getViewportX = function(){
 	return this.viewportX;
 }
+
+Scroller.prototype.moveViewportXBy = function(units){
+	var newViewportX = this.viewportX + units;
+	this.setViewportX(newViewportX);
+}
