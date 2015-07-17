@@ -35,7 +35,7 @@
 
 	function loadSpriteSheet(){
 		//TODO: move json and images to proper resource folder
-		var assetsToLoad = ["res/character.json"];
+		var assetsToLoad = ["res/character.json", "res/cloud-backgorund.png"];
 		loader = new PIXI.loaders.Loader();
 		loader.add('character', "res/character.json");
 		loader.once('complete', spriteSheetLoaded);

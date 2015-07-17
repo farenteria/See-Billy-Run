@@ -2,6 +2,11 @@
 
 //Background 
 function Background(){
+	/*
+		The texture should already be loaded thanks to our loadSpriteSheets() in game.js
+		This statement looks in our cache for that pre-load before loading it directly
+		from our res folder
+	*/
 	var backTexture = PIXI.Texture.fromImage("res/cloud-background.png");
 
 	//will make our background loop without showing a break
