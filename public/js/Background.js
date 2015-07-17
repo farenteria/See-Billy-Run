@@ -2,7 +2,7 @@
 
 //Background 
 function Background(){
-	var backTexture = PIXI.Texture.fromImage("img/cloud-background.png");
+	var backTexture = PIXI.Texture.fromImage("res/cloud-background.png");
 
 	//will make our background loop without showing a break
 	PIXI.extras.TilingSprite.call(this, backTexture, 512, 256);

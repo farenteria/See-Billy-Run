@@ -4,11 +4,13 @@
 	var container;
 	var renderer;
 	var scroller;
-	var unitsToMove;
+	var loader;
+
+	var SCROLLING_SPEED;
 
 	function init(){
 		//how many units should our background move horizontally?
-		unitsToMove = 2;
+		SCROLLING_SPEED = 2;
 
 		//our stage
 		container = new PIXI.Container();
@@ -18,18 +20,37 @@
 			view:document.getElementById("game-canvas")
 		});
 
-		scroller = new Scroller(container);
+		renderer.backgroundColor = 0x0099FF;
 
-		//initial update
-		requestAnimationFrame(update);
+		loadSpriteSheet();
 	}
 
 	//moves background to the left a bit, and renders every frame
 	function update(){
-		scroller.moveViewportXBy(unitsToMove);
+		scroller.moveViewportXBy(SCROLLING_SPEED);
 
 		renderer.render(container); //renders container
 		requestAnimationFrame(update); //updates every frame
+	}
+
+	function loadSpriteSheet(){
+		//TODO: move json and images to proper resource folder
+		var assetsToLoad = ["res/character.json"];
+		loader = new PIXI.loaders.Loader();
+		loader.add('character', "res/character.json");
+		loader.once('complete', spriteSheetLoaded);
+		loader.load();
+	}
+
+	function spriteSheetLoaded(){
+		scroller = new Scroller(container);
+		requestAnimationFrame(update);
+
+		//initial test to place a sprite image on screen
+		var slice1 = PIXI.Sprite.fromFrame("walk_01");
+ 		slice1.position.x = 32;
+		slice1.position.y = 64;
+		container.addChild(slice1);
 	}
 
 	init();
