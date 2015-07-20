@@ -9,9 +9,18 @@ body{
 }
 
 .stick-figure{
+	margin: 0 auto;
 	height: 90px;
-	width: 90px;
+	width: 50px;
 	background-color: red;
+}
+
+.head{
+	margin: 0 auto;
+	height: 30px;
+	width: 30px;
+	background-color: #000000;
+	border-radius: 50%;
 }
 
 /*@media (min-width: 768px){
