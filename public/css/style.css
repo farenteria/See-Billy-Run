@@ -24,6 +24,7 @@ body{
 	height: 90px;
 	width: 50px;
 	background-color: red;
+	position: relative;
 }
 
 .head{
@@ -50,6 +51,23 @@ body{
 	margin-right: 10px;
 	margin-top: -30px;
 	-webkit-transform: rotate(-45deg);
+}
+
+.arms{
+	height: 30px;
+	position: absolute;
+}
+
+.arm-1{
+	top: 35px;
+	left: 13px;
+	-webkit-transform: rotate(35deg);
+}
+
+.arm-2{
+	top: 35px;
+	right: 13px;
+	-webkit-transform: rotate(-35deg);
 }
 
 /*@media (min-width: 768px){
