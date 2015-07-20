@@ -22,7 +22,7 @@
 
 		renderer.backgroundColor = 0x0099FF;
 
-		loadSpriteSheet();
+		loadBackground();
 	}
 
 	//moves background to the left a bit, and renders every frame
@@ -33,24 +33,19 @@
 		requestAnimationFrame(update); //updates every frame
 	}
 
-	function loadSpriteSheet(){
+	function loadBackground(){
 		//TODO: move json and images to proper resource folder
-		var assetsToLoad = ["res/character.json", "res/cloud-backgorund.png"];
+		var assetsToLoad = ["res/cloud-background.png"];
+		
 		loader = new PIXI.loaders.Loader();
 		loader.add('character', "res/character.json");
-		loader.once('complete', spriteSheetLoaded);
+		loader.once('complete', backgroundLoaded);
 		loader.load();
 	}
 
-	function spriteSheetLoaded(){
+	function backgroundLoaded(){
 		scroller = new Scroller(container);
 		requestAnimationFrame(update);
-
-		//initial test to place a sprite image on screen
-		var slice1 = PIXI.Sprite.fromFrame("walk_01");
- 		slice1.position.x = 32;
-		slice1.position.y = 64;
-		container.addChild(slice1);
 	}
 
 	init();
