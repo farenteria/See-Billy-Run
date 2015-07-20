@@ -1,5 +1,6 @@
 body{
 	text-align: center;
+	position: relative;
 }
 
 #game-canvas{
@@ -12,19 +13,27 @@ body{
 	margin: 0 auto;
 }
 
+.absolute-pos{
+	position: absolute;
+}
+
 .black-background{
 	background-color: #000000;
 }
 
-.stick-width{
-	width: 5px;
-}
 
+/*
+	Stick figure body 
+*/
 .stick-figure{
 	height: 90px;
 	width: 50px;
-	background-color: red;
-	position: relative;
+	top: 292px;
+	left: 200px;
+}
+
+.stick-width{
+	width: 5px;
 }
 
 .head{
@@ -37,47 +46,32 @@ body{
 	height: 35px;
 }
 
-.legs{
-	height: 30px;
-}
-
-.leg-1{
-	margin-left: 10px;
-	margin-top: -4px;
-	-webkit-transform: rotate(45deg);
-}
-
-.leg-2{
-	margin-right: 10px;
-	margin-top: -30px;
-	-webkit-transform: rotate(-45deg);
-}
-
 .arms{
 	height: 30px;
-	position: absolute;
+	top: 35px;
 }
 
 .arm-1{
-	top: 35px;
+	left: 15px;
+	-webkit-transform: rotate(25deg);
+}
+
+.arm-2{
+	right: 15px;
+	-webkit-transform: rotate(-25deg);
+}
+
+.legs{
+	height: 30px;
+	top: 60px;
+}
+
+.leg-1{
 	left: 13px;
 	-webkit-transform: rotate(35deg);
 }
 
-.arm-2{
-	top: 35px;
+.leg-2{
 	right: 13px;
 	-webkit-transform: rotate(-35deg);
 }
-
-/*@media (min-width: 768px){
-	canvas{
-		margin-top: 8%;
-	}
-}
-
-@media (min-width: 992px){
-	canvas{
-		margin-top: 10%;
-	}
-}*/
