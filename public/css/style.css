@@ -8,43 +8,45 @@ body{
 	background-color: #488BE4;
 }
 
-.stick-figure{
+.center-margin{
 	margin: 0 auto;
+}
+
+.black-background{
+	background-color: #000000;
+}
+
+.stick-width{
+	width: 5px;
+}
+
+.stick-figure{
 	height: 90px;
 	width: 50px;
 	background-color: red;
 }
 
 .head{
-	margin: 0 auto;
 	height: 30px;
 	width: 30px;
-	background-color: #000000;
 	border-radius: 50%;
 }
 
 .torso{
-	margin: 0 auto;
 	height: 35px;
-	background-color: #000000;
-	width: 5px;
+}
+
+.legs{
+	height: 30px;
 }
 
 .leg-1{
-	margin: 0 auto;
-	height: 30px;
-	background-color: #000000;
-	width: 5px;
 	margin-left: 10px;
 	margin-top: -4px;
 	-webkit-transform: rotate(45deg);
 }
 
 .leg-2{
-	margin: 0 auto;
-	height: 30px;
-	background-color: #000000;
-	width: 5px;
 	margin-right: 10px;
 	margin-top: -30px;
 	-webkit-transform: rotate(-45deg);
