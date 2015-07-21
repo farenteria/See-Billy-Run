@@ -20,6 +20,11 @@ function makeCharacterJump(){
 	}, 300);
 }
 
+// sliding animation
+function makeCharacterSlide(){
+	console.log("down");
+}
+
 /*
 	Will either add class (for action animation), or remove class
 	(to return character back to default position).
@@ -47,6 +52,7 @@ function animateWithClass(addOrRemove, action){
 // will add appropriate class to appropriate limb for animation
 function addLimbClass(limb, action, limbNum){
 	$('#' + limb + '-' + limbNum).addClass(limb + '-' + limbNum + '-' + action);
+	$('#' + limb + '-' + limbNum).addClass('transition-time');
 }
 
 // will remove class added with previous function, thus returning it to default animation state

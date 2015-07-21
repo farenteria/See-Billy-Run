@@ -21,6 +21,10 @@ body{
 	background-color: #000000;
 }
 
+.transition-time{
+	transition: .3s;
+}
+
 
 /*
 	Stick figure body 
@@ -51,12 +55,12 @@ body{
 	top: 35px;
 }
 
-.arm-1{
+.arm-0{
 	left: 15px;
 	-webkit-transform: rotate(25deg);
 }
 
-.arm-2{
+.arm-1{
 	right: 15px;
 	-webkit-transform: rotate(-25deg);
 }
@@ -66,12 +70,12 @@ body{
 	top: 60px;
 }
 
-.leg-1{
+.leg-0{
 	left: 13px;
 	-webkit-transform: rotate(35deg);
 }
 
-.leg-2{
+.leg-1{
 	right: 13px;
 	-webkit-transform: rotate(-35deg);
 }
@@ -82,26 +86,25 @@ body{
 	javascript
 */
 .arm-0-jump{
-	transition: .3s;
 	-webkit-transform: rotate(50deg);
 }
 
 .arm-1-jump{
-	transition: .3s;
-	left: 35px;
-	top: 20px;
-	-webkit-transform: rotate(-120deg);
+	left: 33px;
+	top: 25px;
+	-webkit-transform: rotate(-90deg);
 }
 
 .leg-0-jump{
-	transition: .3s;
 	top: 55px;
 	left: 10px;
 	-webkit-transform: rotate(70deg);
 }
 
 .leg-1-jump{
-	transition: .3s;
 	top: 45px;
 	-webkit-transform: rotate(-120deg);
+}
+
+.head-slide{
 }
