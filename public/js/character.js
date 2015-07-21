@@ -3,13 +3,15 @@
 */
 "use strict";
 
+var animationTime = 300;
+
 //jumping animation for character
 function makeCharacterJump(){
 	$('#stick-figure').animate({
 		top: '-=40'
-	}, 300).animate({
+	}, animationTime).animate({
 		top: '+=40'
-	}, 300);
+	}, animationTime);
 
 	// add jump class
 	animateWithClass('add', 'jump');
@@ -17,7 +19,7 @@ function makeCharacterJump(){
 	//remove jump class for landing
 	setTimeout(function(){
 		animateWithClass('remove', 'jump');
-	}, 300);
+	}, animationTime);
 }
 
 // sliding animation
