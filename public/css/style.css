@@ -85,6 +85,54 @@ body{
 	Stick figure animation classes that will be added and removed when necessary by
 	javascript
 */
+@keyframes run-0{
+	0%{
+		-webkit-transform: rotate(50deg);
+	}
+	25%{
+		left: 20px;
+	}
+	50%{
+		-webkit-transform: rotate(-50deg);
+		left: 30px;
+	}
+	75%{
+		left: 20px;
+	}
+	100%{
+		-webkit-transform: rotate(50deg);
+		left: 13px;
+	}
+}
+
+@keyframes run-1{
+	0%{
+		-webkit-transform: rotate(-50deg);
+	}
+	25%{
+		left: 20px;
+	}
+	50%{
+		-webkit-transform: rotate(50deg);
+		left: 3px;
+	}
+	75%{
+		left: 20px;
+	}
+	100%{
+		-webkit-transform: rotate(-50deg);
+		left: 25px;
+	}	
+}
+
+.arm-0-run{
+	animation: run-0 .5s linear infinite;
+}
+
+.arm-1-run{
+	animation: run-1 .5s linear infinite;
+}
+
 .arm-0-jump{
 	-webkit-transform: rotate(50deg);
 }

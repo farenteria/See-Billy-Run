@@ -59,9 +59,13 @@
 			if(event.which == 38){
 				makeCharacterJump();
 			}else if(event.which == 40){
-				console.log("down");	
+				makeCharacterSlide();
 			}
 		});
+
+		$('button').on('click', function(){
+			makeCharacterRun();
+		})
 	}
 
 	init();

@@ -5,6 +5,11 @@
 
 var animationTime = 300;
 
+// sets default running animation
+function makeCharacterRun(){
+	animateWithClass('add', 'run');
+}
+
 //jumping animation for character
 function makeCharacterJump(){
 	$('#stick-figure').animate({
@@ -25,6 +30,8 @@ function makeCharacterJump(){
 // sliding animation
 function makeCharacterSlide(){
 	console.log("down");
+
+	animateWithClass()
 }
 
 /*
