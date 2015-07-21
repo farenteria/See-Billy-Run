@@ -43,11 +43,14 @@ body{
 .head{
 	height: 30px;
 	width: 30px;
+	left: 10px;
 	border-radius: 50%;
 }
 
 .torso{
 	height: 35px;
+	left: 22px;
+	top: 30px;
 }
 
 .arms{
@@ -155,4 +158,5 @@ body{
 }
 
 .head-slide{
+	top: 60px;
 }
