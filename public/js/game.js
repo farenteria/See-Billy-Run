@@ -33,12 +33,10 @@
 		requestAnimationFrame(update); //updates every frame
 	}
 
+	//this will load in the background onto the canvas if it's in cache
 	function loadBackground(){
-		//TODO: move json and images to proper resource folder
-		var assetsToLoad = ["res/cloud-background.png"];
-		
 		loader = new PIXI.loaders.Loader();
-		loader.add('character', "res/character.json");
+		loader.add('background', '/res/cloud-background.png');
 		loader.once('complete', backgroundLoaded);
 		loader.load();
 	}

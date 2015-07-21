@@ -12,11 +12,6 @@ function Scroller(container){
 		this.background.setViewportX(viewportX);
 	}
 
-	//gets the current position of viewport
-	this.getViewportX = function(){
-		return this.viewportX;
-	}
-
 	//move the viewport by a specific amount of units
 	this.moveViewportXBy = function(units){
 		var newViewportX = this.viewportX + units;
