@@ -41,10 +41,9 @@ function animateWithClass(addOrRemove, action){
 				addLimbClass(limbs[i], action, j.toString());
 			}else if(addOrRemove =='remove'){
 				removeLimbClass(limbs[i], action, j.toString());
-				$('#' + limbs[i] + '-' + j).animate({
-					transition: '.3s'
-				});
 			}
+
+			addTransition(limbs[i], j);
 		}
 	}	
 }
@@ -52,10 +51,14 @@ function animateWithClass(addOrRemove, action){
 // will add appropriate class to appropriate limb for animation
 function addLimbClass(limb, action, limbNum){
 	$('#' + limb + '-' + limbNum).addClass(limb + '-' + limbNum + '-' + action);
-	$('#' + limb + '-' + limbNum).addClass('transition-time');
 }
 
 // will remove class added with previous function, thus returning it to default animation state
 function removeLimbClass(limb, action, limbNum){
 	$('#' + limb + '-' + limbNum).removeClass(limb + '-' + limbNum + '-' + action);
+}
+
+// allows the animation for set time as stated in .transition-time in style.css
+function addTransition(limb, limbNum){
+	$('#' + limb + '-' + limbNum).addClass('transition-time');	
 }
