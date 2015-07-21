@@ -125,12 +125,61 @@ body{
 	}	
 }
 
+@keyframes run-2{
+	0%{
+		-webkit-transform: rotate(50deg);
+	}
+	25%{
+		left: 22px;
+	}
+	50%{
+		-webkit-transform: rotate(-50deg);
+		left: 35px;
+	}
+	75%{
+		left: 22px;
+	}
+	100%{
+		-webkit-transform: rotate(50deg);
+		left: 13px;
+	}
+}
+
+@keyframes run-3{
+	0%{
+		-webkit-transform: rotate(-50deg);
+	}
+	25%{
+		right: 22px;
+	}
+	50%{
+		-webkit-transform: rotate(50deg);
+		right: 34px;
+
+	}
+	75%{
+		right: 22px;
+	}
+	100%{
+		-webkit-transform: rotate(-50deg);
+		right: 13px;
+	}
+}
+
 .arm-0-run{
 	animation: run-0 .5s linear infinite;
 }
 
 .arm-1-run{
 	animation: run-1 .5s linear infinite;
+}
+
+.leg-0-run{
+	animation: run-2 .5s linear infinite;
+}
+
+.leg-1-run{
+	animation: run-3 .5s linear infinite;
 }
 
 .arm-0-jump{
