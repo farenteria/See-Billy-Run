@@ -140,6 +140,18 @@ body{
 	}
 }
 
+@keyframes slide-2{
+	50%{
+		-webkit-transform: rotate(90deg) translate(40px, 10px);
+	}
+}
+
+@keyframes slide-3{
+	50%{
+		-webkit-transform: rotate(60deg) translate(20px, 50px);
+	}
+}
+
 .arm-0-run, .leg-0-run{
 	animation: run-0 .5s linear infinite;
 }
@@ -175,4 +187,12 @@ body{
 
 .torso-slide{
 	animation: slide-1 .5s linear;
+}
+
+.arm-0-slide{
+	animation: slide-2 .5s linear;
+}
+
+.arm-1-slide{
+	animation: slide-3 .5s linear;
 }
