@@ -66,31 +66,38 @@
 			top: '+=40'
 		}, 300);
 
-		$('#arm-1').addClass('arm-1-jump');
-		$('#arm-2').addClass('arm-2-jump');
-		$('#leg-1').addClass('leg-1-jump');
-		$('#leg-2').addClass('leg-2-jump');
+		// add jump animation
+		animateWithClass('add', 'jump');
 
 		//landing animation
 		setTimeout(function(){
-			$('#arm-1').removeClass('arm-1-jump');
-			$('#arm-2').removeClass('arm-2-jump');
-			$('#leg-1').removeClass('leg-1-jump');
-			$('#leg-2').removeClass('leg-2-jump');			
-
-			$('#arm-1').animate({
-				transition: '.3s'
-			});
-			$('#arm-2').animate({
-				transition: '.3s'
-			});
-			$('#leg-1').animate({
-				transition: '.3s'
-			});
-			$('#leg-2').animate({
-				transition: '.3s'
-			});				
+			animateWithClass('remove', 'jump');
 		}, 300);
+	}
+
+	function animateWithClass(addOrRemove, action){
+		var limbs = ['arm', 'leg'];
+
+		for(var i = 0; i < limbs.length; i++){
+			for(var j = 0; j < limbs.length; j++){
+				if(addOrRemove == 'add'){
+					addLimbClass(limbs[i], action, j.toString());
+				}else if(addOrRemove =='remove'){
+					removeLimbClass(limbs[i], action, j.toString());
+					$('#' + limbs[i] + '-' + j).animate({
+						transition: '.3s'
+					});
+				}
+			}
+		}	
+	}
+
+	function addLimbClass(limb, action, limbNum){
+		$('#' + limb + '-' + limbNum).addClass(limb + '-' + limbNum + '-' + action);
+	}
+
+	function removeLimbClass(limb, action, limbNum){
+		$('#' + limb + '-' + limbNum).removeClass(limb + '-' + limbNum + '-' + action);
 	}
 
 	init();
