@@ -12,6 +12,8 @@ function makeCharacterRun(){
 
 //jumping animation for character
 function makeCharacterJump(){
+	animateWithClass('remove', 'run');
+
 	$('#stick-figure').animate({
 		top: '-=40'
 	}, animationTime).animate({
@@ -21,9 +23,10 @@ function makeCharacterJump(){
 	// add jump class
 	animateWithClass('add', 'jump');
 
-	//remove jump class for landing
+	//remove jump class for landing, and go back to running
 	setTimeout(function(){
 		animateWithClass('remove', 'jump');
+		makeCharacterRun();
 	}, animationTime);
 }
 
@@ -31,7 +34,7 @@ function makeCharacterJump(){
 function makeCharacterSlide(){
 	console.log("down");
 
-	animateWithClass()
+	// animateWithClass()
 }
 
 /*

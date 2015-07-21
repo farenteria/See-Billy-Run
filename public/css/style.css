@@ -125,19 +125,11 @@ body{
 	}	
 }
 
-.arm-0-run{
+.arm-0-run, .leg-0-run{
 	animation: run-0 .5s linear infinite;
 }
 
-.arm-1-run{
-	animation: run-1 .5s linear infinite;
-}
-
-.leg-0-run{
-	animation: run-0 .5s linear infinite;
-}
-
-.leg-1-run{
+.arm-1-run, .leg-1-run{
 	animation: run-1 .5s linear infinite;
 }
 
