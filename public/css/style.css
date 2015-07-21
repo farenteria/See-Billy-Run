@@ -33,7 +33,7 @@ body{
 	height: 90px;
 	width: 50px;
 	top: 292px;
-	left: 200px;
+	left: 400px;
 }
 
 .stick-width{
@@ -128,6 +128,15 @@ body{
 	}	
 }
 
+/*@keyframes slide-0{
+	0%{
+		top: 0px;
+	}
+	100%{
+		top: 60px;
+	}
+}
+*/
 .arm-0-run, .leg-0-run{
 	animation: run-0 .5s linear infinite;
 }
