@@ -90,46 +90,6 @@ body{
 		-webkit-transform: rotate(50deg);
 	}
 	25%{
-		left: 20px;
-	}
-	50%{
-		-webkit-transform: rotate(-50deg);
-		left: 30px;
-	}
-	75%{
-		left: 20px;
-	}
-	100%{
-		-webkit-transform: rotate(50deg);
-		left: 13px;
-	}
-}
-
-@keyframes run-1{
-	0%{
-		-webkit-transform: rotate(-50deg);
-	}
-	25%{
-		left: 20px;
-	}
-	50%{
-		-webkit-transform: rotate(50deg);
-		left: 3px;
-	}
-	75%{
-		left: 20px;
-	}
-	100%{
-		-webkit-transform: rotate(-50deg);
-		left: 25px;
-	}	
-}
-
-@keyframes run-2{
-	0%{
-		-webkit-transform: rotate(50deg);
-	}
-	25%{
 		left: 22px;
 	}
 	50%{
@@ -145,7 +105,7 @@ body{
 	}
 }
 
-@keyframes run-3{
+@keyframes run-1{
 	0%{
 		-webkit-transform: rotate(-50deg);
 	}
@@ -154,8 +114,7 @@ body{
 	}
 	50%{
 		-webkit-transform: rotate(50deg);
-		right: 34px;
-
+		right: 35px;
 	}
 	75%{
 		right: 22px;
@@ -163,7 +122,7 @@ body{
 	100%{
 		-webkit-transform: rotate(-50deg);
 		right: 13px;
-	}
+	}	
 }
 
 .arm-0-run{
@@ -175,11 +134,11 @@ body{
 }
 
 .leg-0-run{
-	animation: run-2 .5s linear infinite;
+	animation: run-0 .5s linear infinite;
 }
 
 .leg-1-run{
-	animation: run-3 .5s linear infinite;
+	animation: run-1 .5s linear infinite;
 }
 
 .arm-0-jump{
