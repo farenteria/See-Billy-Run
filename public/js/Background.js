@@ -3,7 +3,7 @@
 //Background 
 function Background(){
 	/*
-		The texture should already be loaded thanks to our loadSpriteSheets() in game.js
+		The texture should already be loaded thanks to our loadBackground() in game.js
 		This statement looks in our cache for that pre-load before loading it directly
 		from our res folder
 	*/
