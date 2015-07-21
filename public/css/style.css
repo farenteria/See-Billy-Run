@@ -130,7 +130,13 @@ body{
 
 @keyframes slide-0{
 	50%{
-		-webkit-transform: translate(0, 50px);
+		-webkit-transform: translate(0, 60px);
+	}
+}
+
+@keyframes slide-1{
+	50%{
+		-webkit-transform: rotate(-90deg) translate(-30px, 35px);
 	}
 }
 
