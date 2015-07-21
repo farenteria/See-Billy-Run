@@ -4,6 +4,7 @@
 "use strict";
 
 var animationTime = 300;
+var bodyParts = ['arm', 'leg', 'head', 'torso'];
 
 // sets default running animation
 function makeCharacterRun(){
@@ -24,17 +25,13 @@ function makeCharacterJump(){
 	animateWithClass('add', 'jump');
 
 	//remove jump class for landing, and go back to running
-	setTimeout(function(){
-		animateWithClass('remove', 'jump');
-		makeCharacterRun();
-	}, animationTime);
+	backToDefaultAnim('jump');
 }
 
 // sliding animation
 function makeCharacterSlide(){
-	console.log("down");
-
-	// animateWithClass()
+	animateWithClass('add', 'slide');
+	backToDefaultAnim('slide');
 }
 
 /*
@@ -45,32 +42,39 @@ function makeCharacterSlide(){
 	the appropriate ids and classes
 */
 function animateWithClass(addOrRemove, action){
-	var limbs = ['arm', 'leg'];
-
-	for(var i = 0; i < limbs.length; i++){
-		for(var j = 0; j < limbs.length; j++){
-			if(addOrRemove == 'add'){
-				addLimbClass(limbs[i], action, j.toString());
-			}else if(addOrRemove =='remove'){
-				removeLimbClass(limbs[i], action, j.toString());
+	for(var i = 0; i < bodyParts.length; i++){
+		if (i < bodyParts.length / 2){
+			for(var j = 0; j < bodyParts.length / 2; j++){
+				addRemoveActionClass(bodyParts[i] + '-' + j, action, addOrRemove);
+				addTransition(bodyParts[i] + '-' + j);
 			}
-
-			addTransition(limbs[i], j);
+		}else{
+			if(action == 'slide'){
+				addRemoveActionClass(bodyParts[i], action, addOrRemove);
+				addTransition(bodyParts[i]);
+			}
 		}
-	}	
+	}
 }
 
-// will add appropriate class to appropriate limb for animation
-function addLimbClass(limb, action, limbNum){
-	$('#' + limb + '-' + limbNum).addClass(limb + '-' + limbNum + '-' + action);
-}
-
-// will remove class added with previous function, thus returning it to default animation state
-function removeLimbClass(limb, action, limbNum){
-	$('#' + limb + '-' + limbNum).removeClass(limb + '-' + limbNum + '-' + action);
+// will add or remove appropriate class to appropriate body part for animation
+function addRemoveActionClass(bodyPart, action, addOrRemove){
+	if(addOrRemove == 'add'){
+		$('#' + bodyPart).addClass(bodyPart + '-' + action);
+	} else if(addOrRemove == 'remove'){
+		$('#' + bodyPart).removeClass(bodyPart + '-' + action);	
+	}
 }
 
 // allows the animation for set time as stated in .transition-time in style.css
-function addTransition(limb, limbNum){
-	$('#' + limb + '-' + limbNum).addClass('transition-time');	
+function addTransition(bodyPart){
+	$('#' + bodyPart).addClass('transition-time');	
+}
+
+// Will go back to default animation after a set period of time
+function backToDefaultAnim(action){
+	setTimeout(function(){
+		animateWithClass('remove', action);
+		makeCharacterRun();
+	}, animationTime);	
 }
