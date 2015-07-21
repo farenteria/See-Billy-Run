@@ -128,27 +128,54 @@ body{
 	}	
 }
 
+/* head */
 @keyframes slide-0{
 	50%{
 		-webkit-transform: translate(0, 60px);
 	}
 }
 
+/* torso */
 @keyframes slide-1{
+	25%{
+		-webkit-transform: rotate(-45deg) translate(5px, 20px);
+	}
 	50%{
-		-webkit-transform: rotate(-90deg) translate(-30px, 35px);
+		-webkit-transform: rotate(-90deg) translate(-30px, 40px);
 	}
 }
 
+/* arm 0 */
 @keyframes slide-2{
 	50%{
-		-webkit-transform: rotate(90deg) translate(40px, 10px);
+		-webkit-transform: rotate(90deg) translate(30px, 10px);
 	}
 }
 
+/* arm 1 */
 @keyframes slide-3{
 	50%{
 		-webkit-transform: rotate(60deg) translate(20px, 50px);
+	}
+}
+
+/* leg 0 */
+@keyframes slide-4{
+	50%{
+		-webkit-transform: rotate(-120deg) translate(-35px, 60px);
+	}
+	75%{
+		-webkit-transform: rotate(-90deg) translate(-5px, 30px);
+	}
+}
+
+/* leg 1 */
+@keyframes slide-5{
+	50%{
+		-webkit-transform: rotate(-120deg) translate(-25px, 40px);
+	}
+	75%{
+		-webkit-transform: rotate(-90deg) translate(-10px, 15px);
 	}
 }
 
@@ -195,4 +222,12 @@ body{
 
 .arm-1-slide{
 	animation: slide-3 .5s linear;
+}
+
+.leg-0-slide{
+	animation: slide-4 .5s linear;
+}
+
+.leg-1-slide{
+	animation: slide-5 .5s linear;
 }
