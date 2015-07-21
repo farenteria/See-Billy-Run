@@ -42,39 +42,48 @@
 		loader.load();
 	}
 
+	//start scrolling when the background has been loaded
 	function backgroundLoaded(){
 		scroller = new Scroller(container);
 		requestAnimationFrame(update);
 	}
 
+	//set up the event listeners for the page
 	function setupEvents(){
 		$('body').on('keydown', function(event){
 			//this is for user pressing up key
 			if(event.which == 38){
-				moveCharacterUp();
+				makeCharacterJump();
 			}else if(event.which == 40){
 				console.log("down");	
 			}
 		});
 	}
 
-	function moveCharacterUp(){
-		//jumping animation
+	//jumping animation for character
+	function makeCharacterJump(){
 		$('#stick-figure').animate({
 			top: '-=40'
 		}, 300).animate({
 			top: '+=40'
 		}, 300);
 
-		// add jump animation
+		// add jump class
 		animateWithClass('add', 'jump');
 
-		//landing animation
+		//remove jump class for landing
 		setTimeout(function(){
 			animateWithClass('remove', 'jump');
 		}, 300);
 	}
 
+	/*
+		Will either add class (for action animation), or remove class
+		(to return character back to default position).
+		'addOrRemove' refers to whether we are adding a class or removing it.
+		'action' refers to what the character will be doing so we can use 
+		the appropriate ids and classes
+	*/
 	function animateWithClass(addOrRemove, action){
 		var limbs = ['arm', 'leg'];
 
