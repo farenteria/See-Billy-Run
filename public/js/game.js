@@ -65,7 +65,7 @@
 
 		$('button').on('click', function(){
 			makeCharacterRun();
-		})
+		});
 	}
 
 	init();
