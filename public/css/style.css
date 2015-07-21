@@ -92,3 +92,16 @@ body{
 	top: 20px;
 	-webkit-transform: rotate(-120deg);
 }
+
+.leg-1-jump{
+	transition: .3s;
+	top: 55px;
+	left: 10px;
+	-webkit-transform: rotate(70deg);
+}
+
+.leg-2-jump{
+	transition: .3s;
+	top: 45px;
+	-webkit-transform: rotate(-120deg);
+}

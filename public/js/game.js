@@ -59,6 +59,7 @@
 	}
 
 	function moveCharacterUp(){
+		//jumping animation
 		$('#stick-figure').animate({
 			top: '-=40'
 		}, 300).animate({
@@ -67,17 +68,28 @@
 
 		$('#arm-1').addClass('arm-1-jump');
 		$('#arm-2').addClass('arm-2-jump');
+		$('#leg-1').addClass('leg-1-jump');
+		$('#leg-2').addClass('leg-2-jump');
 
+		//landing animation
 		setTimeout(function(){
 			$('#arm-1').removeClass('arm-1-jump');
 			$('#arm-2').removeClass('arm-2-jump');
+			$('#leg-1').removeClass('leg-1-jump');
+			$('#leg-2').removeClass('leg-2-jump');			
 
 			$('#arm-1').animate({
 				transition: '.3s'
 			});
 			$('#arm-2').animate({
 				transition: '.3s'
-			});			
+			});
+			$('#leg-1').animate({
+				transition: '.3s'
+			});
+			$('#leg-2').animate({
+				transition: '.3s'
+			});				
 		}, 300);
 	}
 
