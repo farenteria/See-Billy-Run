@@ -23,6 +23,7 @@
 		renderer.backgroundColor = 0x0099FF;
 
 		loadBackground();
+		setupEvents();
 	}
 
 	//moves background to the left a bit, and renders every frame
@@ -44,6 +45,40 @@
 	function backgroundLoaded(){
 		scroller = new Scroller(container);
 		requestAnimationFrame(update);
+	}
+
+	function setupEvents(){
+		$('body').on('keydown', function(event){
+			//this is for user pressing up key
+			if(event.which == 38){
+				moveCharacterUp();
+			}else if(event.which == 40){
+				console.log("down");	
+			}
+		});
+	}
+
+	function moveCharacterUp(){
+		$('#stick-figure').animate({
+			top: '-=40'
+		}, 300).animate({
+			top: '+=40'
+		}, 300);
+
+		$('#arm-1').addClass('arm-1-jump');
+		$('#arm-2').addClass('arm-2-jump');
+
+		setTimeout(function(){
+			$('#arm-1').removeClass('arm-1-jump');
+			$('#arm-2').removeClass('arm-2-jump');
+
+			$('#arm-1').animate({
+				transition: '.3s'
+			});
+			$('#arm-2').animate({
+				transition: '.3s'
+			});			
+		}, 300);
 	}
 
 	init();

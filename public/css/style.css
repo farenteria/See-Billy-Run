@@ -75,3 +75,20 @@ body{
 	right: 13px;
 	-webkit-transform: rotate(-35deg);
 }
+
+
+/*
+	Stick figure animation classes that will be added and removed when necessary by
+	javascript
+*/
+.arm-1-jump{
+	transition: .3s;
+	-webkit-transform: rotate(50deg);
+}
+
+.arm-2-jump{
+	transition: .3s;
+	left: 35px;
+	top: 20px;
+	-webkit-transform: rotate(-120deg);
+}
