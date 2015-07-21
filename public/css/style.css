@@ -128,15 +128,12 @@ body{
 	}	
 }
 
-/*@keyframes slide-0{
-	0%{
-		top: 0px;
-	}
-	100%{
-		top: 60px;
+@keyframes slide-0{
+	50%{
+		-webkit-transform: translate(0, 50px);
 	}
 }
-*/
+
 .arm-0-run, .leg-0-run{
 	animation: run-0 .5s linear infinite;
 }
@@ -167,5 +164,9 @@ body{
 }
 
 .head-slide{
-	top: 60px;
+	animation: slide-0 .5s linear;
+}
+
+.torso-slide{
+	animation: slide-1 .5s linear;
 }

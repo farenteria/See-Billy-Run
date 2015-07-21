@@ -30,6 +30,7 @@ function makeCharacterJump(){
 
 // sliding animation
 function makeCharacterSlide(){
+	animateWithClass('remove', 'run');
 	animateWithClass('add', 'slide');
 	backToDefaultAnim('slide');
 }
@@ -73,8 +74,10 @@ function addTransition(bodyPart){
 
 // Will go back to default animation after a set period of time
 function backToDefaultAnim(action){
+	var delay = animationTime + 200;
+
 	setTimeout(function(){
 		animateWithClass('remove', action);
 		makeCharacterRun();
-	}, animationTime);	
+	}, delay);	
 }
