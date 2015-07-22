@@ -63,6 +63,7 @@
 			}
 		});
 
+		//The following events will be used purely for testing
 		$('#run').on('click', function(){
 			makeCharacterRun();
 		});
@@ -77,7 +78,11 @@
 
 		$('#slide').on('click', function(){
 			makeCharacterSlide();
-		})
+		});
+
+		$('#block').on('click', function(){
+
+		});
 	}
 
 	init();
