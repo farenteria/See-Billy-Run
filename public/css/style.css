@@ -25,6 +25,14 @@ body{
 	transition: .3s;
 }
 
+/*
+	Block
+*/
+.block{
+	height: 30px;
+	width: 30px;
+	background-color: blue;
+}
 
 /*
 	Stick figure body 
