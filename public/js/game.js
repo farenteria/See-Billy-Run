@@ -69,6 +69,14 @@
 
 		$('#stop').on('click', function(){
 			animateWithClass('remove', 'run');
+		});
+
+		$('#jump').on('click', function(){
+			makeCharacterJump();
+		});
+
+		$('#slide').on('click', function(){
+			makeCharacterSlide();
 		})
 	}
 

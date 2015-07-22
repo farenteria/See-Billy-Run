@@ -181,12 +181,23 @@ body{
 	}
 }
 
+/* entire body */
+@keyframes jump{
+	50%{
+		-webkit-transform: translate(0px, -40px);
+	}
+}
+
 .arm-0-run, .leg-0-run{
 	animation: run-0 .5s linear infinite;
 }
 
 .arm-1-run, .leg-1-run{
 	animation: run-1 .5s linear infinite;
+}
+
+.stick-figure-jump{
+	animation: jump .5s linear;
 }
 
 .arm-0-jump{

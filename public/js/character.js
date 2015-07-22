@@ -15,11 +15,8 @@ function makeCharacterRun(){
 function makeCharacterJump(){
 	animateWithClass('remove', 'run');
 
-	$('#stick-figure').animate({
-		top: '-=40'
-	}, animationTime).animate({
-		top: '+=40'
-	}, animationTime);
+	//jumping has the added step of moving entire body upwards
+	addRemoveActionClass('stick-figure', 'jump', 'add');
 
 	// add jump class
 	animateWithClass('add', 'jump');
@@ -77,6 +74,9 @@ function backToDefaultAnim(action){
 	var delay = animationTime + 200;
 
 	setTimeout(function(){
+		if(action =='jump'){
+			addRemoveActionClass('stick-figure', action, 'remove')
+		}
 		animateWithClass('remove', action);
 		makeCharacterRun();
 	}, delay);	
