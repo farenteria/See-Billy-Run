@@ -63,9 +63,13 @@
 			}
 		});
 
-		$('button').on('click', function(){
+		$('#run').on('click', function(){
 			makeCharacterRun();
 		});
+
+		$('#stop').on('click', function(){
+			animateWithClass('remove', 'run');
+		})
 	}
 
 	init();
