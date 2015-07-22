@@ -90,15 +90,22 @@ body{
 */
 /* arm and leg 0 */
 @keyframes run-0{
+	0%{
+		-webkit-transform: rotate(50deg);
+	}
 	25%{
-		-webkit-transform: rotate(80deg) translate(-10px, 5px);
+		left: 22px;
 	}
 	50%{
-		-webkit-transform: rotate(10deg) translate(5px, 0px);
+		-webkit-transform: rotate(-50deg);
+		left: 35px;
 	}
 	75%{
-		-webkit-transform: rotate(-60deg) translate(0px, -5px);
-		
+		left: 22px;
+	}
+	100%{
+		-webkit-transform: rotate(50deg);
+		left: 13px;
 	}
 }
 
@@ -175,7 +182,7 @@ body{
 }
 
 .arm-0-run, .leg-0-run{
-	animation: run-0 5s linear infinite;
+	animation: run-0 .5s linear infinite;
 }
 
 .arm-1-run, .leg-1-run{
