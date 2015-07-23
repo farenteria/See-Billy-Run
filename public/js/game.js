@@ -9,6 +9,8 @@
 	var renderer;
 	var scroller;
 	var loader;
+	var gameSpeed;
+	var interval;
 
 	var SCROLLING_SPEED;
 
@@ -27,6 +29,8 @@
 		renderer.backgroundColor = 0x0099FF;
 
 		loadBackground();
+
+		gameSpeed = 1000;
 		setupEvents();
 	}
 
@@ -76,7 +80,9 @@
 
 		$('#block-button').on('click', getNextBlock);
 
-		$('#start-game').on('click', startGame);
+		$('#start-button').on('click', startGame);
+
+		$('#stop-game-button').on('click', endGame);
 	}
 
 	// places a new block into our game area, and removes it after leaving game area
@@ -102,8 +108,20 @@
 		}, 2000);
 	}
 
+	//starts our interval to repeat the game TODO: end the game when collision occurs
 	function startGame(){
-		
+		console.log("game start");
+
+		interval = setInterval(function(){
+			getNextBlock();
+		}, gameSpeed);
+
+	}
+
+	//clears the interval to end the game
+	function endGame(){
+		clearInterval(interval);
+		console.log("Game over");
 	}
 
 	init();
