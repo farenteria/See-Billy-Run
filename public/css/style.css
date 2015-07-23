@@ -9,6 +9,12 @@ body{
 	background-color: #488BE4;
 }
 
+.game-board{
+	width: 512px;
+	height: 384px;
+	overflow: hidden;
+}
+
 .center-margin{
 	margin: 0 auto;
 }

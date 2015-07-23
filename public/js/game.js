@@ -81,7 +81,8 @@
 		});
 
 		$('#block').on('click', function(){
-
+			var newBlock = new Block();
+			newBlock.insertBlock();
 		});
 	}
 
