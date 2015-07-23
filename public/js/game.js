@@ -64,31 +64,27 @@
 		});
 
 		//The following events will be used purely for testing
-		$('#run').on('click', function(){
-			makeCharacterRun();
-		});
+		$('#run').on('click', makeCharacterRun);
 
 		$('#stop').on('click', function(){
 			animateWithClass('remove', 'run');
 		});
 
-		$('#jump').on('click', function(){
-			makeCharacterJump();
-		});
+		$('#jump').on('click', makeCharacterJump);
 
-		$('#slide').on('click', function(){
-			makeCharacterSlide();
-		});
+		$('#slide').on('click', makeCharacterSlide);
 
-		$('#block-button').on('click', function(){
-			getNextBlock();
-		});
+		$('#block-button').on('click', getNextBlock);
+
+		$('#start-game').on('click', startGame);
 	}
 
 	// places a new block into our game area, and removes it after leaving game area
 	function getNextBlock(){
 		var newBlock;
 		var type;
+
+		//we'll only have 2 blocks to dodge
 		var rand = Math.floor(Math.random() * 2);
 
 		if(rand == 0){
@@ -97,12 +93,17 @@
 			type = 'jump';
 		}
 
-		newBlock = new Block(type);		
+		newBlock = new Block(type);
 		newBlock.insertBlock();
 
+		//remove the block once it's off-screen because it's useless now
 		setTimeout(function(){
 			newBlock.removeBlock();
 		}, 2000);
+	}
+
+	function startGame(){
+		
 	}
 
 	init();
