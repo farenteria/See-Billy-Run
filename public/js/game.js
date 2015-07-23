@@ -81,23 +81,28 @@
 		});
 
 		$('#block-button').on('click', function(){
-			var newBlock = new Block(getNextBlock());
-			newBlock.insertBlock();
-
-			setTimeout(function(){
-				newBlock.removeBlock();
-			}, 2000);
+			getNextBlock();
 		});
 	}
 
+	// places a new block into our game area, and removes it after leaving game area
 	function getNextBlock(){
+		var newBlock;
+		var type;
 		var rand = Math.floor(Math.random() * 2);
 
 		if(rand == 0){
-			return 'slide';
+			type = 'slide';
 		}else{
-			return 'jump';
+			type = 'jump';
 		}
+
+		newBlock = new Block(type);		
+		newBlock.insertBlock();
+
+		setTimeout(function(){
+			newBlock.removeBlock();
+		}, 2000);
 	}
 
 	init();

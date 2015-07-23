@@ -36,13 +36,11 @@ body{
 	Block
 */
 @keyframes slide-left{
-	0%{
-
-	}
 	100%{
 		left: -600px;
 	}
 }
+
 .block{
 	height: 30px;
 	width: 30px;
@@ -53,7 +51,7 @@ body{
 }
 
 .slide-block{
-	top: 100px;
+	top: 300px;
 }
 
 .jump-block{
