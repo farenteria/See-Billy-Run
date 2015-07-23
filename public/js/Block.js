@@ -9,7 +9,6 @@ function Block(type){
 	// adds new block div into dom
 	this.insertBlock = function(){
 		$('#game-board').append(newBlock);
-		console.log(blockType);
 	}
 
 	// removes block div from dom
