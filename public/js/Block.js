@@ -1,9 +1,9 @@
 "use strict";
 
 function Block(type){
-	var blockId = '#block';
+	var blockId = 'block';
 	var blockType = type;
-	var newBlock = '<div ' + blockId + ' class="block ' + blockType + '-block"></div>';
+	var newBlock = '<div id="' + blockId + '" class="block ' + blockType + '-block"></div>';
 
 	this.insertBlock = function(){
 
@@ -12,6 +12,6 @@ function Block(type){
 	}
 
 	this.removeBlock = function(){
-		$(blockId).remove();
+		$('#' + blockId).remove();
 	}
 }
