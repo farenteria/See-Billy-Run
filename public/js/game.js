@@ -81,7 +81,7 @@
 		});
 
 		$('#block').on('click', function(){
-			var newBlock = new Block();
+			var newBlock = new Block('jump');
 			newBlock.insertBlock();
 		});
 	}

@@ -1,11 +1,17 @@
 "use strict";
 
-function Block(){
-	this.insertBlock = function(){
-		var maximumY = $('#game-canvas').height();
-		var maximumX = $('#game-canvas').width();
-		var rand = 0;
+function Block(type){
+	var blockId = '#block';
+	var blockType = type;
+	var newBlock = '<div ' + blockId + ' class="block ' + blockType + '-block"></div>';
 
-		console.log(maximumX);
+	this.insertBlock = function(){
+
+		$('#game-board').append(newBlock);
+		console.log(newBlock);
+	}
+
+	this.removeBlock = function(){
+		$(blockId).remove();
 	}
 }

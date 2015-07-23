@@ -35,10 +35,29 @@ body{
 /*
 	Block
 */
+@keyframes slide-left{
+	0%{
+
+	}
+	100%{
+		left: -500px;
+	}
+}
 .block{
 	height: 30px;
 	width: 30px;
 	background-color: blue;
+	position: absolute;
+	animation: slide-left 2s linear;
+	left: 500px
+}
+
+.slide-block{
+	top: 100px;
+}
+
+.jump-block{
+	bottom: 0px;
 }
 
 /*
