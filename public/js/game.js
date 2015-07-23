@@ -80,10 +80,24 @@
 			makeCharacterSlide();
 		});
 
-		$('#block').on('click', function(){
-			var newBlock = new Block('jump');
+		$('#block-button').on('click', function(){
+			var newBlock = new Block(getNextBlock());
 			newBlock.insertBlock();
+
+			setTimeout(function(){
+				newBlock.removeBlock();
+			}, 2000);
 		});
+	}
+
+	function getNextBlock(){
+		var rand = Math.floor(Math.random() * 2);
+
+		if(rand == 0){
+			return 'slide';
+		}else{
+			return 'jump';
+		}
 	}
 
 	init();

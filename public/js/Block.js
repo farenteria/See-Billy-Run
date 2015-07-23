@@ -8,7 +8,7 @@ function Block(type){
 	this.insertBlock = function(){
 
 		$('#game-board').append(newBlock);
-		console.log(newBlock);
+		console.log(blockType);
 	}
 
 	this.removeBlock = function(){
