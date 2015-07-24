@@ -13,6 +13,7 @@
 	var interval;
 	var interval2;
 	var score;
+	var blockNum;
 
 	var SCROLLING_SPEED;
 
@@ -33,7 +34,8 @@
 		loadBackground();
 
 		score = 0;
-		gameSpeed = 1000;
+		blockNum = score; // Blocks and score will always be tied together (used for block id)
+		gameSpeed = 2000;
 		setupEvents();
 	}
 
@@ -102,13 +104,13 @@
 			type = 'jump';
 		}
 
-		newBlock = new Block(type);
+		newBlock = new Block(type, blockNum);
 		newBlock.insertBlock();
 
 		//remove the block once it's off-screen because it's useless now
 		setTimeout(function(){
 			newBlock.removeBlock();
-		}, 2000);
+		}, 1500);
 	}
 
 	//starts our interval to repeat the game
@@ -134,10 +136,10 @@
 		var characterYPos = $('#stick-figure').position().top;
 		var characterHeight = $('#stick-figure').height();
 		var characterWidth = $('#stick-figure').width();
-		var blockXPos = $('#block').position().left;
-		var blockYPos = $('#block').position().top;
-		var blockHeight = $('#block').height();
-		var blockWidth = $('#block').width();
+		var blockXPos = $('#block-' + blockNum).position().left;
+		var blockYPos = $('#block-' + blockNum).position().top;
+		var blockHeight = $('#block-' + blockNum).height();
+		var blockWidth = $('#block-' + blockNum).width();
 
 		/*
 			compares the current position of character and width of it to the
@@ -159,9 +161,7 @@
 			}
 		}
 
-		console.log(blockXPos + " " + blockYPos);
-
-		// setInterval(detectCollision, 25);
+		// console.log(blockXPos + " " + blockYPos);
 	}
 
 	/* 
