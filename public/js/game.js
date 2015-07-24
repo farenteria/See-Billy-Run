@@ -11,6 +11,7 @@
 	var loader;
 	var gameSpeed;
 	var interval;
+	var interval2;
 	var score;
 
 	var SCROLLING_SPEED;
@@ -110,15 +111,20 @@
 		}, 2000);
 	}
 
-	//starts our interval to repeat the game TODO: end the game when collision occurs
+	//starts our interval to repeat the game
 	function startGame(){
 		console.log("game start");
 		interval = setInterval(getNextBlock, gameSpeed);
+
+		setTimeout(function(){
+			interval2 = setInterval(detectCollision, 25);
+		}, gameSpeed);
 	}
 
 	// clears the interval to end the game
 	function endGame(){
 		clearInterval(interval);
+		clearInterval(interval2);
 		console.log("Game over");
 	}
 
@@ -129,7 +135,7 @@
 		var characterHeight = $('#stick-figure').height();
 		var characterWidth = $('#stick-figure').width();
 		var blockXPos = $('#block').position().left;
-		var blockYPos = $('#block').position().left;
+		var blockYPos = $('#block').position().top;
 		var blockHeight = $('#block').height();
 		var blockWidth = $('#block').width();
 
@@ -143,7 +149,7 @@
 			characterHeight + characterYPos > blockYPos){
 			//there has been a collision! Loser!
 			endGame();
-		}else{
+		}else if(blockXPos < 0){
 			score++;
 			console.log(score);
 
@@ -152,6 +158,10 @@
 				addRound();
 			}
 		}
+
+		console.log(blockXPos + " " + blockYPos);
+
+		// setInterval(detectCollision, 25);
 	}
 
 	/* 
