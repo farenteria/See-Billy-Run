@@ -11,6 +11,7 @@
 	var loader;
 	var gameSpeed;
 	var interval;
+	var score;
 
 	var SCROLLING_SPEED;
 
@@ -30,6 +31,7 @@
 
 		loadBackground();
 
+		score = 0;
 		gameSpeed = 1000;
 		setupEvents();
 	}
@@ -111,17 +113,56 @@
 	//starts our interval to repeat the game TODO: end the game when collision occurs
 	function startGame(){
 		console.log("game start");
-
-		interval = setInterval(function(){
-			getNextBlock();
-		}, gameSpeed);
-
+		interval = setInterval(getNextBlock, gameSpeed);
 	}
 
-	//clears the interval to end the game
+	// clears the interval to end the game
 	function endGame(){
 		clearInterval(interval);
 		console.log("Game over");
+	}
+
+	// will detect if div surrounding character collides with a block
+	function detectCollision(){
+		var characterXPos = $('#stick-figure').position().left;
+		var characterYPos = $('#stick-figure').position().top;
+		var characterHeight = $('#stick-figure').height();
+		var characterWidth = $('#stick-figure').width();
+		var blockXPos = $('#block').position().left;
+		var blockYPos = $('#block').position().left;
+		var blockHeight = $('#block').height();
+		var blockWidth = $('#block').width();
+
+		/*
+			compares the current position of character and width of it to the
+			current position of block and its width
+		*/
+		if(characterXPos < blockXPos + blockWidth &&
+			characterXPos + characterWidth > blockXPos &&
+			characterYPos < blockYPos + blockHeight &&
+			characterHeight + characterYPos > blockYPos){
+			//there has been a collision! Loser!
+			endGame();
+		}else{
+			score++;
+			console.log(score);
+
+			//Every 5 points, make a new round
+			if(score % 5){
+				addRound();
+			}
+		}
+	}
+
+	/* 
+		clear our interval, and decrease gameSpeed to increase difficulty,
+		and increase fun! I'm sorry, I swear that I'm fun at parties...
+	*/
+	function addRound(){
+		gameSpeed -= 100;
+
+		clearInterval(interval);
+		interval = setInterval(getNextBlock, gameSpeed);
 	}
 
 	init();
