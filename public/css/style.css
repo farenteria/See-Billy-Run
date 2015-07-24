@@ -37,7 +37,7 @@ body{
 */
 @keyframes slide-left{
 	100%{
-		left: -600px;
+		left: -512px;
 	}
 }
 
@@ -46,8 +46,8 @@ body{
 	width: 30px;
 	background-color: blue;
 	position: absolute;
-	animation: slide-left 2s linear;
-	left: 600px
+	animation: slide-left 1.5s linear;
+	left: 512px;
 }
 
 .slide-block{
@@ -66,6 +66,7 @@ body{
 	width: 50px;
 	top: 292px;
 	left: 50px;
+	background-color: red;
 }
 
 .stick-width{
@@ -165,7 +166,7 @@ body{
 /* entire body */
 @keyframes jump-0{
 	50%{
-		-webkit-transform: translate(0px, -40px);
+		-webkit-transform: translate(0px, -50px);
 	}
 }
 
@@ -251,6 +252,13 @@ body{
 	}
 }
 
+/* entire body */
+@keyframes slide-6{
+	50%{
+		-webkit-transform: translate(0px, 50px);
+	}
+}
+
 .arm-0-run, .leg-0-run{
 	animation: run-0 .5s linear infinite;
 }
@@ -277,6 +285,10 @@ body{
 
 .leg-1-jump{
 	animation: jump-4 .5s linear;
+}
+
+.stick-figure-slide{
+	animation: slide-6 .5s linear;
 }
 
 .head-slide{

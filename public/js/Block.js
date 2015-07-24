@@ -1,8 +1,8 @@
 "use strict";
 
 // strictly used to insert and remove new block objects
-function Block(type){
-	var BLOCK_ID = 'block';
+function Block(type, id){
+	var BLOCK_ID = 'block-' + id;
 	var blockType = type;
 	var newBlock = '<div id="' + BLOCK_ID + '" class="block ' + blockType + '-block"></div>';
 

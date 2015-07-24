@@ -29,6 +29,7 @@ function makeCharacterJump(){
 function makeCharacterSlide(){
 	animateWithClass('remove', 'run');
 	animateWithClass('add', 'slide');
+	addRemoveActionClass('stick-figure', 'slide', 'add');
 	backToDefaultAnim('slide');
 }
 
@@ -74,7 +75,7 @@ function backToDefaultAnim(action){
 	var delay = animationTime + 200;
 
 	setTimeout(function(){
-		if(action =='jump'){
+		if(action == 'jump' || action == 'slide'){
 			addRemoveActionClass('stick-figure', action, 'remove')
 		}
 		animateWithClass('remove', action);
