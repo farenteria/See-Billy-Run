@@ -4,18 +4,12 @@
 */
 "use strict";
 
-var container;
-var renderer;
-var scroller;
-var loader;
 var gameSpeed;
 var interval;
 var interval2;
 var score;
 var blockNum;
 var round;
-
-var SCROLLING_SPEED;
 
 function init(){
 	score = 0;
@@ -73,6 +67,7 @@ function getNextBlock(){
 	// remove the block once it's off-screen because it's useless now
 	setTimeout(function(){
 		newBlock.removeBlock();
+		clearInterval(interval2);
 	}, collisionTimer);
 }
 
@@ -107,13 +102,11 @@ function detectCollision(){
 	var blockHeight = $('.block').height();
 	var blockWidth = $('.block').width();
 
-
 	// only checks once block is in range of touching character div
 	if(characterXPos + characterWidth >= blockXPos){
 		/*
 			This is what checks for the actual collisions.
 		*/
-		console.log(blockXPos);
 		
 		if(characterXPos < blockXPos + blockWidth &&
 			characterXPos + characterWidth > blockXPos &&
@@ -123,6 +116,7 @@ function detectCollision(){
 			endGame();
 		// Gives a single point as long as block is still in range of stick-figure div
 		}else if(!(characterXPos > blockXPos + blockWidth)){
+			clearInterval(interval2);
 			score++;
 			changeScoreText(score);
 
@@ -131,8 +125,6 @@ function detectCollision(){
 				addRound();
 			}
 		}
-
-		clearInterval(interval2);
 	}
 }
 

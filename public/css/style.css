@@ -44,8 +44,10 @@ body{
 	Block
 */
 @keyframes slide-left{
+	0%{		
+	}
 	100%{
-		-webkit-transform: translateX(-550px);
+		left: -512px;
 	}
 }
 
@@ -54,9 +56,9 @@ body{
 	width: 30px;
 	background-color: blue;
 	position: absolute;
-	animation: slide-left 1s linear;
-	translate3d(0, 0, 0);
+	animation: slide-left 2s linear;
 	left: 512px;
+	-webkit-transform: translate3d(0, 0, 0);
 }
 
 .slide-block{
