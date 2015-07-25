@@ -5,10 +5,18 @@
 	background-color: #488BE4;
 }
 
+@keyframes cloud-horizontal{
+	100%{
+		-webkit-transform: translateX(-600px);
+	}
+}
+
 .cloud{
 	border-radius: 50%;
 	background-color: #FFFFFF;
 	height: 110px;
 	width: 200px;
 	position: absolute;
+	animation: cloud-horizontal 2s linear;
+	-webkit-transform: translate3d(0, 0, 0);
 }

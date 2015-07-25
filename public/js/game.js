@@ -38,6 +38,7 @@ function init(){
 	blockNum = score; // Blocks and score will always be tied together (used for block id)
 	gameSpeed = 2000;
 	setupEvents();
+	setupBackground();
 }
 
 //moves background to the left a bit, and renders every frame
@@ -181,4 +182,9 @@ function addRound(){
 	interval = setInterval(getNextBlock, gameSpeed);
 
 	changeRoundText(round);
+}
+
+function setupBackground(){
+	var newCloud = new Cloud();
+	newCloud.addNewCloud();
 }
