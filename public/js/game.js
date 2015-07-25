@@ -14,6 +14,7 @@
 	var interval2;
 	var score;
 	var blockNum;
+	var round;
 
 	var SCROLLING_SPEED;
 
@@ -34,6 +35,7 @@
 		loadBackground();
 
 		score = 0;
+		round = 0;
 		blockNum = score; // Blocks and score will always be tied together (used for block id)
 		gameSpeed = 2000;
 		setupEvents();
@@ -94,10 +96,11 @@
 	function getNextBlock(){
 		var newBlock;
 		var type;
-		interval2 = setInterval(detectCollision, 50);
-
-		//we'll only have 2 blocks to dodge
+		var collisionTimer = 1500;
+		
+		//we'll only have 2 types of blocks to dodge
 		var rand = Math.floor(Math.random() * 2);
+		interval2 = setInterval(detectCollision, 50);
 
 		if(rand == 0){
 			type = 'slide';
@@ -112,7 +115,7 @@
 		setTimeout(function(){
 			newBlock.removeBlock();
 			clearInterval(interval2);
-		}, 1500);
+		}, collisionTimer);
 	}
 
 	//starts our interval to repeat the game
@@ -121,7 +124,8 @@
 		score = 0;
 		changeScoreText();
 
-		interval = setInterval(getNextBlock, gameSpeed);
+		// interval = setInterval(getNextBlock, gameSpeed);
+		addRound();
 	}
 
 	// clears the interval to end the game
@@ -146,7 +150,6 @@
 		if(characterXPos + characterWidth >= blockXPos){
 			/*
 				This is what checks for the actual collisions.
-				TODO: Make it NOT bug out
 			*/
 			if(characterXPos < blockXPos + blockWidth &&
 				characterXPos + characterWidth > blockXPos &&
@@ -161,13 +164,11 @@
 				clearInterval(interval2);
 
 				//Every 5 points, make a new round
-				if(score % 5){
+				if(score % 5 == 0){
 					addRound();
 				}
 			}
 		}
-
-		// console.log(blockXPos + " " + blockYPos);
 	}
 
 	/* 
@@ -176,13 +177,20 @@
 	*/
 	function addRound(){
 		gameSpeed -= 100;
+		round++;
 
 		clearInterval(interval);
 		interval = setInterval(getNextBlock, gameSpeed);
+		console.log("new round at " + gameSpeed + " ms");
+		changeRoundText();
 	}
 
 	function changeScoreText(){
 		$('#score').text(score);		
+	}
+
+	function changeRoundText(){
+		$('#round').text(round);
 	}
 
 	init();
