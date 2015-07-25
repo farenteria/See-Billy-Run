@@ -2,7 +2,6 @@
 
 // strictly used to insert and remove new block objects
 function Block(type, id){
-	// var BLOCK_ID = 'block-' + id;
 	var blockType = type;
 	var newBlock = '<div class="block ' + blockType + '-block"></div>';
 
@@ -13,6 +12,6 @@ function Block(type, id){
 
 	// removes block div from dom
 	this.removeBlock = function(){
-		$('.' + BLOCK_ID).remove();
+		$('.block' ).remove();
 	}
 }

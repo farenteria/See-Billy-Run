@@ -94,6 +94,7 @@
 	function getNextBlock(){
 		var newBlock;
 		var type;
+		interval2 = setInterval(detectCollision, 50);
 
 		//we'll only have 2 blocks to dodge
 		var rand = Math.floor(Math.random() * 2);
@@ -110,17 +111,17 @@
 		//remove the block once it's off-screen because it's useless now
 		setTimeout(function(){
 			newBlock.removeBlock();
+			clearInterval(interval2);
 		}, 1500);
 	}
 
 	//starts our interval to repeat the game
 	function startGame(){
 		console.log("game start");
-		interval = setInterval(getNextBlock, gameSpeed);
+		score = 0;
+		changeScoreText();
 
-		setTimeout(function(){
-			interval2 = setInterval(detectCollision, 25);
-		}, gameSpeed);
+		interval = setInterval(getNextBlock, gameSpeed);
 	}
 
 	// clears the interval to end the game
@@ -149,11 +150,15 @@
 			characterXPos + characterWidth > blockXPos &&
 			characterYPos < blockYPos + blockHeight &&
 			characterHeight + characterYPos > blockYPos){
+
 			//there has been a collision! Loser!
 			endGame();
-		}else if(blockXPos < 0){
+		}else if(blockXPos < 0 &&
+			characterXPos + characterWidth <= blockXPos &&
+			characterXPos > blockXPos + blockWidth){
+
 			score++;
-			$('#score').text(score);
+			changeScoreText();
 
 			//Every 5 points, make a new round
 			if(score % 5){
@@ -173,6 +178,10 @@
 
 		clearInterval(interval);
 		interval = setInterval(getNextBlock, gameSpeed);
+	}
+
+	function changeScoreText(){
+		$('#score').text(score);		
 	}
 
 	init();
