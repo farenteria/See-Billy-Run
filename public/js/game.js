@@ -65,7 +65,7 @@ function backgroundLoaded(){
 //set up the event listeners for the page
 function setupEvents(){
 	$('body').on('keydown', function(event){
-		//this is for user pressing up key
+		//these are for user pressing up or down key
 		if(event.which == 38){
 			makeCharacterJump();
 		}else if(event.which == 40){
@@ -81,6 +81,8 @@ function setupEvents(){
 	$('#jump').on('click', makeCharacterJump);
 	$('#slide').on('click', makeCharacterSlide);
 	$('#block-button').on('click', getNextBlock);
+
+	//start and end the game at will
 	$('#start-button').on('click', startGame);
 	$('#stop-game-button').on('click', endGame);
 }
@@ -104,16 +106,15 @@ function getNextBlock(){
 	newBlock = new Block(type, blockNum);
 	newBlock.insertBlock();
 
-	//remove the block once it's off-screen because it's useless now
+	// remove the block once it's off-screen because it's useless now
 	setTimeout(function(){
 		newBlock.removeBlock();
 		clearInterval(interval2);
 	}, collisionTimer);
 }
 
-//starts our interval to repeat the game
+// starts our interval to repeat the game
 function startGame(){
-	console.log("game start");
 	score = 0;
 	round = 0;
 	gameSpeed = 2000;
@@ -129,7 +130,6 @@ function startGame(){
 function endGame(){
 	clearInterval(interval);
 	clearInterval(interval2);
-	console.log("Game over");
 }
 
 // will detect if div surrounding character collides with a block
@@ -155,6 +155,7 @@ function detectCollision(){
 
 			//there has been a collision! Loser!
 			endGame();
+		// Gives a single point as long as block is still in range of stick-figure div
 		}else if(!(characterXPos > blockXPos + blockWidth)){
 			score++;
 			changeScoreText(score);
@@ -178,6 +179,6 @@ function addRound(){
 
 	clearInterval(interval);
 	interval = setInterval(getNextBlock, gameSpeed);
-	console.log("new round at " + gameSpeed + " ms");
+
 	changeRoundText(round);
 }

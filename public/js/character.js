@@ -13,23 +13,21 @@ function makeCharacterRun(){
 
 //jumping animation for character
 function makeCharacterJump(){
+	// we remove running animation first before adding jumping animation
 	animateWithClass('remove', 'run');
-
-	//jumping has the added step of moving entire body upwards
-	addRemoveActionClass('stick-figure', 'jump', 'add');
-
-	// add jump class
 	animateWithClass('add', 'jump');
 
-	//remove jump class for landing, and go back to running
+	// remove jump class for landing, and go back to running
 	backToDefaultAnim('jump');
 }
 
 // sliding animation
 function makeCharacterSlide(){
+	// we remove running animation first before adding sliding animation
 	animateWithClass('remove', 'run');
 	animateWithClass('add', 'slide');
-	addRemoveActionClass('stick-figure', 'slide', 'add');
+
+	// remove slide class, and go back to running
 	backToDefaultAnim('slide');
 }
 
@@ -54,6 +52,8 @@ function animateWithClass(addOrRemove, action){
 			}
 		}
 	}
+
+	addRemoveActionClass('stick-figure', action, addOrRemove);
 }
 
 // will add or remove appropriate class to appropriate body part for animation
@@ -75,9 +75,6 @@ function backToDefaultAnim(action){
 	var delay = animationTime + 200;
 
 	setTimeout(function(){
-		if(action == 'jump' || action == 'slide'){
-			addRemoveActionClass('stick-figure', action, 'remove')
-		}
 		animateWithClass('remove', action);
 		makeCharacterRun();
 	}, delay);	
