@@ -1,0 +1,203 @@
+/*
+	Stick figure animation classes that will be added and removed when necessary by
+	javascript
+*/
+/* arm and leg 0 */
+@keyframes run-0{
+	0%{
+		-webkit-transform: rotate(50deg);
+	}
+	25%{
+		left: 22px;
+	}
+	50%{
+		-webkit-transform: rotate(-50deg);
+		left: 35px;
+	}
+	75%{
+		left: 22px;
+	}
+	100%{
+		-webkit-transform: rotate(50deg);
+		left: 13px;
+	}
+}
+
+/* arm and leg 1 */
+@keyframes run-1{
+	0%{
+		-webkit-transform: rotate(-50deg);
+	}
+	25%{
+		right: 22px;
+	}
+	50%{
+		-webkit-transform: rotate(50deg);
+		right: 35px;
+	}
+	75%{
+		right: 22px;
+	}
+	100%{
+		-webkit-transform: rotate(-50deg);
+		right: 13px;
+	}	
+}
+
+/* entire body */
+@keyframes jump-0{
+	50%{
+		-webkit-transform: translate(0px, -50px);
+	}
+}
+
+/* arm 0 */
+@keyframes jump-1{
+	50%{
+		-webkit-transform: rotate(70deg) translate(-5px, 5px);
+	}
+}
+
+/* arm 1 */
+@keyframes jump-2{
+	25%{
+		-webkit-transform: rotate(-70deg) translate(15px, 0px);
+	}
+	50%{
+		-webkit-transform: rotate(-140deg) translate(10px, 20px);
+	}
+}
+
+/* leg 0 */
+@keyframes jump-3{
+	50%{
+		-webkit-transform: rotate(70deg) translate(-5px, 2px);
+	}
+}
+
+/* leg 1 */
+@keyframes jump-4{
+	50%{
+		-webkit-transform: rotate(-120deg) translate(10px, 10px);
+	}
+}
+
+/* head */
+@keyframes slide-0{
+	50%{
+		-webkit-transform: translate(0, 10px);
+	}
+}
+
+/* torso */
+@keyframes slide-1{
+	25%{
+		-webkit-transform: rotate(-45deg) translate(20px, 10px);
+	}
+	50%{
+		-webkit-transform: rotate(-90deg) translate(10px, 20px);
+	}
+}
+
+/* arm 0 */
+@keyframes slide-2{
+	50%{
+		-webkit-transform: rotate(90deg) translate(-10px, -10px);
+	}
+	75%{
+		-webkit-transform: rotate(45deg) translate(0px, 0px);
+	}
+}
+
+/* arm 1 */
+@keyframes slide-3{
+	50%{
+		-webkit-transform: rotate(60deg);
+	}
+	75%{
+		-webkit-transform: rotate(30deg) translate(-10px, 10px);
+	}
+}
+
+/* leg 0 */
+@keyframes slide-4{
+	50%{
+		-webkit-transform: rotate(-120deg) translate(5px, 80px);
+	}
+	75%{
+		-webkit-transform: rotate(-90deg) translate(20px, 30px);
+	}
+}
+
+/* leg 1 */
+@keyframes slide-5{
+	50%{
+		-webkit-transform: rotate(-120deg) translate(20px, 58px);
+	}
+	75%{
+		-webkit-transform: rotate(-90deg) translate(20px, 20px);
+	}
+}
+
+/* entire body */
+@keyframes slide-6{
+	50%{
+		-webkit-transform: translate(0px, 50px);
+	}
+}
+
+.arm-0-run, .leg-0-run{
+	animation: run-0 .5s linear infinite;
+}
+
+.arm-1-run, .leg-1-run{
+	animation: run-1 .5s linear infinite;
+}
+
+.stick-figure-jump{
+	animation: jump-0 .5s linear;
+}
+
+.arm-0-jump{
+	animation: jump-1 .5s linear;
+}
+
+.arm-1-jump{
+	animation: jump-2 .5s linear;
+}
+
+.leg-0-jump{
+	animation: jump-3 .5s linear;
+}
+
+.leg-1-jump{
+	animation: jump-4 .5s linear;
+}
+
+.stick-figure-slide{
+	animation: slide-6 .5s linear;
+}
+
+.head-slide{
+	animation: slide-0 .5s linear;
+}
+
+.torso-slide{
+	animation: slide-1 .5s linear;
+}
+
+.arm-0-slide{
+	animation: slide-2 .5s linear;
+}
+
+.arm-1-slide{
+	animation: slide-3 .5s linear;
+}
+
+.leg-0-slide{
+	animation: slide-4 .5s linear;
+}
+
+.leg-1-slide{
+	animation: slide-5 .5s linear;
+}
