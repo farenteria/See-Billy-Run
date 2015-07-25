@@ -136,10 +136,10 @@
 		var characterYPos = $('#stick-figure').position().top;
 		var characterHeight = $('#stick-figure').height();
 		var characterWidth = $('#stick-figure').width();
-		var blockXPos = $('#block-' + blockNum).position().left;
-		var blockYPos = $('#block-' + blockNum).position().top;
-		var blockHeight = $('#block-' + blockNum).height();
-		var blockWidth = $('#block-' + blockNum).width();
+		var blockXPos = $('.block').position().left;
+		var blockYPos = $('.block').position().top;
+		var blockHeight = $('.block').height();
+		var blockWidth = $('.block').width();
 
 		/*
 			compares the current position of character and width of it to the
