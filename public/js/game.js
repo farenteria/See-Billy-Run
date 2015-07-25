@@ -18,49 +18,12 @@ var round;
 var SCROLLING_SPEED;
 
 function init(){
-	//how many units should our background move horizontally?
-	SCROLLING_SPEED = 2;
-
-	//our stage
-	container = new PIXI.Container();
-
-	//will either use canvas or webgl, depending on browser
-	renderer = PIXI.autoDetectRenderer(512, 384, {
-		view:document.getElementById("game-canvas")
-	});
-
-	renderer.backgroundColor = 0x0099FF;
-
-	loadBackground();
-
 	score = 0;
 	round = 0;
 	blockNum = score; // Blocks and score will always be tied together (used for block id)
 	gameSpeed = 2000;
 	setupEvents();
-	setupBackground();
-}
-
-//moves background to the left a bit, and renders every frame
-function update(){
-	scroller.moveViewportXBy(SCROLLING_SPEED);
-
-	renderer.render(container); //renders container
-	requestAnimationFrame(update); //updates every frame
-}
-
-//this will load in the background onto the canvas if it's in cache
-function loadBackground(){
-	loader = new PIXI.loaders.Loader();
-	loader.add('background', '/res/cloud-background.png');
-	loader.once('complete', backgroundLoaded);
-	loader.load();
-}
-
-//start scrolling when the background has been loaded
-function backgroundLoaded(){
-	scroller = new Scroller(container);
-	requestAnimationFrame(update);
+	// setupBackground();
 }
 
 //set up the event listeners for the page
@@ -110,7 +73,6 @@ function getNextBlock(){
 	// remove the block once it's off-screen because it's useless now
 	setTimeout(function(){
 		newBlock.removeBlock();
-		clearInterval(interval2);
 	}, collisionTimer);
 }
 
@@ -123,14 +85,15 @@ function startGame(){
 	changeScoreText(score);
 	changeRoundText(round);
 
-	// interval = setInterval(getNextBlock, gameSpeed);
 	addRound();
+	console.log("start");
 }
 
 // clears the interval to end the game
 function endGame(){
 	clearInterval(interval);
 	clearInterval(interval2);
+	console.log("end");
 }
 
 // will detect if div surrounding character collides with a block
@@ -144,29 +107,32 @@ function detectCollision(){
 	var blockHeight = $('.block').height();
 	var blockWidth = $('.block').width();
 
+
 	// only checks once block is in range of touching character div
 	if(characterXPos + characterWidth >= blockXPos){
 		/*
 			This is what checks for the actual collisions.
 		*/
+		console.log(blockXPos);
+		
 		if(characterXPos < blockXPos + blockWidth &&
 			characterXPos + characterWidth > blockXPos &&
 			characterYPos < blockYPos + blockHeight &&
 			characterHeight + characterYPos > blockYPos){
-
 			//there has been a collision! Loser!
 			endGame();
 		// Gives a single point as long as block is still in range of stick-figure div
 		}else if(!(characterXPos > blockXPos + blockWidth)){
 			score++;
 			changeScoreText(score);
-			clearInterval(interval2);
 
 			//Every 5 points, make a new round
 			if(score % 5 == 0){
 				addRound();
 			}
 		}
+
+		clearInterval(interval2);
 	}
 }
 
