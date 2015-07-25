@@ -142,27 +142,28 @@
 		var blockHeight = $('.block').height();
 		var blockWidth = $('.block').width();
 
-		/*
-			compares the current position of character and width of it to the
-			current position of block and its width
-		*/
-		if(characterXPos < blockXPos + blockWidth &&
-			characterXPos + characterWidth > blockXPos &&
-			characterYPos < blockYPos + blockHeight &&
-			characterHeight + characterYPos > blockYPos){
+		// only checks once block is in range of touching character div
+		if(characterXPos + characterWidth >= blockXPos){
+			/*
+				This is what checks for the actual collisions.
+				TODO: Make it NOT bug out
+			*/
+			if(characterXPos < blockXPos + blockWidth &&
+				characterXPos + characterWidth > blockXPos &&
+				characterYPos < blockYPos + blockHeight &&
+				characterHeight + characterYPos > blockYPos){
 
-			//there has been a collision! Loser!
-			endGame();
-		}else if(blockXPos < 0 &&
-			characterXPos + characterWidth <= blockXPos &&
-			characterXPos > blockXPos + blockWidth){
+				//there has been a collision! Loser!
+				endGame();
+			}else if(!(characterXPos > blockXPos + blockWidth)){
+				score++;
+				changeScoreText();
+				clearInterval(interval2);
 
-			score++;
-			changeScoreText();
-
-			//Every 5 points, make a new round
-			if(score % 5){
-				addRound();
+				//Every 5 points, make a new round
+				if(score % 5){
+					addRound();
+				}
 			}
 		}
 
