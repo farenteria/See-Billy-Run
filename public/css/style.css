@@ -16,6 +16,14 @@ body{
 	position: relative;
 }
 
+.score{
+	position: absolute;
+}
+
+.round{
+	position: absolute;
+}
+
 .center-margin{
 	margin: 0 auto;
 }

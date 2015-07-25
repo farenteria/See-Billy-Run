@@ -5,10 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>See Billy Run!</title>
 	<link rel="stylesheet" href="css/character-anims.css">
+	<link rel="stylesheet" href="css/background.css">
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 	<div id="game-board" class="game-board center-margin">
+		<p>Score: <span id="score" class="score">0</span></p>
+		<p>Round: <span id="round" class="round">0</span></p>
 		<canvas id="game-canvas"></canvas>
 
 		<div id="stick-figure" class="stick-figure center-margin absolute-pos">
@@ -21,8 +24,6 @@
 		</div>
 	</div>
 
-	<p>Score: <span id="score">0</span></p>
-	<p>Round: <span id="round">0</span></p>
 	<button id="run">run</button>
 	<button id="stop">stop</button>
 	<button id="jump">jump</button>
