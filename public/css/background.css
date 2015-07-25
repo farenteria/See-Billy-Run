@@ -1,0 +1,14 @@
+/*
+	Will be used to make our background blue, and with clouds
+*/
+.background{
+	background-color: #488BE4;
+}
+
+.cloud{
+	border-radius: 50%;
+	background-color: #FFFFFF;
+	height: 110px;
+	width: 200px;
+	position: absolute;
+}
