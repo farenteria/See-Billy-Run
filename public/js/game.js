@@ -153,7 +153,7 @@
 			endGame();
 		}else if(blockXPos < 0){
 			score++;
-			console.log(score);
+			$('#score').text(score);
 
 			//Every 5 points, make a new round
 			if(score % 5){
