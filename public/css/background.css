@@ -14,9 +14,22 @@
 .cloud{
 	border-radius: 50%;
 	background-color: #FFFFFF;
+	position: absolute;
+	left: 512px;
+	animation: cloud-horizontal 3s linear;
+	-webkit-transform: translate3d(0, 0, 0);
+}
+.cloud-0{
 	height: 110px;
 	width: 200px;
-	position: absolute;
-	animation: cloud-horizontal 2s linear;
-	-webkit-transform: translate3d(0, 0, 0);
+}
+
+.cloud-1{
+	height: 220px;
+	width: 300px
+}
+
+.cloud-2{
+	height: 150px;
+	width: 240px;
 }

@@ -1,7 +1,7 @@
 "use strict";
 
 // will be used to add clouds to our background
-function Cloud(){
+function Cloud(addThisClass){
 	var width;
 	var height;
 	var y;
@@ -12,19 +12,14 @@ function Cloud(){
 	var lowerLimit = 100;
 
 	this.getNewAttributes = function(){
-		// width = Math.floor(Math.random() * (widthLimit - lowerLimit) + lowerLimit);
-		// height = Math.floor(Math.random() * (heightLimit - lowerLimit) + lowerLimit);
-		// var y = Math.floor(Math.random() * ());
-		width = '300px';
-		height = '300px';
-		y = '100px';
-		newCloud = '<div class="cloud"></div>';
-
-		$('.cloud').css({
-			"width": width,
-			"height": height,
-			"top": y
-		});
+		width = Math.floor(Math.random() * (widthLimit - lowerLimit) + lowerLimit);
+		width = width.toString() + 'px';
+		height = Math.floor(Math.random() * (heightLimit - lowerLimit) + lowerLimit);
+		height = height.toString() + 'px';
+		y = Math.floor(Math.random() * (500) + lowerLimit);
+		y = y.toString() + 'px';
+		
+		newCloud = '<div class="cloud cloud-' + addThisClass + '"></div>';
 	}
 
 	this.addNewCloud = function(){
@@ -33,6 +28,6 @@ function Cloud(){
 	}
 
 	this.removeCloud = function(){
-		('.cloud').remove();
+		$('.cloud-' + addThisClass).remove();
 	}
 }
