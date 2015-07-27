@@ -5,8 +5,8 @@
 "use strict";
 
 var gameSpeed;
-var interval;
-var interval2;
+var newBlockInterval;
+var collisionInterval;
 var score;
 var blockNum;
 var round;
@@ -56,11 +56,12 @@ function setupEvents(){
 function getNextBlock(){
 	var newBlock;
 	var type;
-	var collisionTimer = 1500;
+	var removeTimer = 1500;
 		
+	collisionInterval = setInterval(detectCollision, 50);
+
 	//we'll only have 2 types of blocks to dodge
 	var rand = Math.floor(Math.random() * 2);
-	interval2 = setInterval(detectCollision, 50);
 
 	if(rand == 0){
 		type = 'slide';
@@ -74,8 +75,8 @@ function getNextBlock(){
 	// remove the block once it's off-screen because it's useless now
 	setTimeout(function(){
 		newBlock.removeBlock();
-		clearInterval(interval2);
-	}, collisionTimer);
+		clearInterval(collisionInterval);
+	}, removeTimer);
 }
 
 // starts our interval to repeat the game
@@ -94,8 +95,9 @@ function startGame(){
 
 // clears the interval to end the game
 function endGame(){
-	clearInterval(interval);
-	clearInterval(interval2);
+	clearInterval(newBlockInterval);
+	clearInterval(collisionInterval);
+
 	showGameOver();
 }
 
@@ -114,8 +116,7 @@ function detectCollision(){
 	if(characterXPos + characterWidth >= blockXPos){
 		/*
 			This is what checks for the actual collisions.
-		*/
-		
+		*/	
 		if(characterXPos < blockXPos + blockWidth &&
 			characterXPos + characterWidth > blockXPos &&
 			characterYPos < blockYPos + blockHeight &&
@@ -124,11 +125,12 @@ function detectCollision(){
 			endGame();
 		// Gives a single point as long as block is still in range of stick-figure div
 		}else if(!(characterXPos > blockXPos + blockWidth)){
-			clearInterval(interval2);
+			clearInterval(collisionInterval);
 			score++;
+			// in view.js
 			changeScoreText(score);
 
-			//Every 5 points, make a new round
+			// Every 5 points, make a new round
 			if(score % 5 == 0){
 				addRound();
 			}
@@ -144,29 +146,9 @@ function addRound(){
 	gameSpeed -= 100;
 	round++;
 
-	clearInterval(interval);
-	interval = setInterval(getNextBlock, gameSpeed);
+	clearInterval(newBlockInterval);
+	newBlockInterval = setInterval(getNextBlock, gameSpeed);
 
+	// in view.js
 	changeRoundText(round);
-}
-
-function setupBackground(){
-	cloudsInterval = setInterval(function(){
-		var highOrLow;
-
-		if(counter % 2 == 0){
-			highOrLow = 'high';
-		}else{
-			highOrLow = 'low';
-		}
-
-		var newCluster = new Cluster(counter, highOrLow);
-
-		newCluster.addNewCloud();
-		counter++;
-
-		setTimeout(function(){
-			newCluster.removeCloud();
-		}, 5000);
-	}, 2000);
 }

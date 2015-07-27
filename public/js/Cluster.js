@@ -4,15 +4,12 @@
 function Cluster(id, highOrLow){
 	var width;
 	var height;
-	var y;
 	var newCloud;
 	var newCluster;
-	var numClouds = 3;
-	var lowerLimit = 100;
+	var numClouds;
 
 	this.getNewAttributes = function(){
-		y = Math.floor(Math.random() * (500) + lowerLimit);
-		y = y.toString() + 'px';
+		numClouds = 3;
 		
 		newCluster = '<div id="' + id + '" class="cluster ' + highOrLow + '">';
 		for(var i = 0; i < numClouds; i++){
@@ -24,7 +21,6 @@ function Cluster(id, highOrLow){
 
 	this.addNewCloud = function(){
 		this.getNewAttributes();
-
 		$('#game-board').append(newCluster);
 	}
 

@@ -31,3 +31,24 @@ function showGameOver(){
 function removeGameOver(){
 	$('.game-over').text('');
 }
+
+function setupBackground(){
+	cloudsInterval = setInterval(function(){
+		var highOrLow;
+
+		if(counter % 2 == 0){
+			highOrLow = 'high';
+		}else{
+			highOrLow = 'low';
+		}
+
+		var newCluster = new Cluster(counter, highOrLow);
+
+		newCluster.addNewCloud();
+		counter++;
+
+		setTimeout(function(){
+			newCluster.removeCloud();
+		}, 5000);
+	}, 2000);
+}
