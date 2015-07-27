@@ -166,6 +166,6 @@ function setupBackground(){
 
 		setTimeout(function(){
 			newCluster.removeCloud();
-		}, 3000);
-	}, 3000);
+		}, 5000);
+	}, 2000);
 }
