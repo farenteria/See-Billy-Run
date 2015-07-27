@@ -1,6 +1,19 @@
 #Change log
 All notable changes to this project will be documented in this file
 
+## 0.8 / 2015-07-25
+### Added
+	- Added score and round in dom
+	- Moved code around to be easier, and faster
+	- Added our version for clouds (still early)
+### Fixed
+	- more dependency on GPU, making game smoother
+### Removed
+	- All references to pixi.js library. Not necessary
+### Bugs
+	- Sliding block isn't smooth, because using GPU for this cause some nasty bugs. Still very playable
+	- Clouds don't look as nice as before, this will be fixed in future release
+	
 ## 0.7 / 2015-07-23
 ### Added
 	- Button to start game
@@ -13,7 +26,7 @@ All notable changes to this project will be documented in this file
 ###Bugs
 	- Currently bugs out with each new block that's added (it adds a ton of them every 25 ms)
 	- Can't test scoring system because of this
-	
+
 ## 0.6 / 2015-07-22
 ### Added
 	- Old running animations that don't cause problems
