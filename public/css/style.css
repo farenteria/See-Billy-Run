@@ -15,13 +15,25 @@ body{
 	overflow: hidden;
 	position: relative;
 }
+.score-container{
+	float: left;
+	width: 100px;
+}
+
+.round-container{
+	float: right;
+	width: 100px;
+	margin-right: 15px; 
+}
 
 .score{
 	position: absolute;
+	margin: 0 10px;
 }
 
 .round{
 	position: absolute;
+	margin: 0 10px 0px;
 }
 
 .center-margin{

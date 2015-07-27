@@ -1,4 +1,62 @@
 /*
+	Stick figure body 
+*/
+.stick-figure{
+	height: 90px;
+	width: 50px;
+	top: 292px;
+	left: 50px;
+	z-index: 1;
+}
+
+.stick-width{
+	width: 5px;
+}
+
+.head{
+	height: 30px;
+	width: 30px;
+	left: 10px;
+	border-radius: 50%;
+}
+
+.torso{
+	height: 35px;
+	left: 22px;
+	top: 30px;
+}
+
+.arms{
+	height: 30px;
+	top: 35px;
+}
+
+.arm-0{
+	left: 15px;
+	-webkit-transform: rotate(25deg);
+}
+
+.arm-1{
+	right: 15px;
+	-webkit-transform: rotate(-25deg);
+}
+
+.legs{
+	height: 30px;
+	top: 60px;
+}
+
+.leg-0{
+	left: 13px;
+	-webkit-transform: rotate(35deg);
+}
+
+.leg-1{
+	right: 13px;
+	-webkit-transform: rotate(-35deg);
+}
+
+/*
 	Stick figure animation classes that will be added and removed when necessary by
 	javascript
 */
