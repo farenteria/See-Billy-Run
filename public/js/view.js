@@ -22,3 +22,12 @@ function changeRoundText(round){
 		$('.round-container').removeClass('new-round');
 	}, 2000);
 }
+
+function showGameOver(){
+	var text = "Game Over!";
+	$('.game-over').text(text);
+}
+
+function removeGameOver(){
+	$('.game-over').text('');
+}

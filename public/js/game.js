@@ -89,14 +89,14 @@ function startGame(){
 
 	addRound();
 	setupInstructions();
-	console.log("start");
+	removeGameOver();
 }
 
 // clears the interval to end the game
 function endGame(){
 	clearInterval(interval);
 	clearInterval(interval2);
-	console.log("end");
+	showGameOver();
 }
 
 // will detect if div surrounding character collides with a block
