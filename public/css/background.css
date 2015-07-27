@@ -16,6 +16,7 @@
 	background-color: #FFFFFF;
 	position: absolute;
 	left: 512px;
+	z-index: 0;
 	animation: cloud-horizontal 3s linear;
 	-webkit-transform: translate3d(0, 0, 0);
 }

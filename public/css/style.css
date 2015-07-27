@@ -56,6 +56,7 @@ body{
 	width: 30px;
 	background-color: blue;
 	position: absolute;
+	z-index: 1;
 	animation: slide-left 2s linear;
 	left: 512px;
 	-webkit-transform: translate3d(0, 0, 0);
@@ -77,6 +78,7 @@ body{
 	width: 50px;
 	top: 292px;
 	left: 50px;
+	z-index: 1;
 }
 
 .stick-width{
