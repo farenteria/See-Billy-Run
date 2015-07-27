@@ -3,39 +3,6 @@ body{
 	position: relative;
 }
 
-#game-canvas{
-	width: 512px;
-	height: 384px;
-	background-color: #488BE4;
-}
-
-.game-board{
-	width: 512px;
-	height: 384px;
-	overflow: hidden;
-	position: relative;
-}
-.score-container{
-	float: left;
-	width: 100px;
-}
-
-.round-container{
-	float: right;
-	width: 100px;
-	margin-right: 15px; 
-}
-
-.score{
-	position: absolute;
-	margin: 0 10px;
-}
-
-.round{
-	position: absolute;
-	margin: 0 10px 0px;
-}
-
 .center-margin{
 	margin: 0 auto;
 }
@@ -50,6 +17,68 @@ body{
 
 .transition-time{
 	transition: .3s;
+}
+
+#game-canvas{
+	width: 512px;
+	height: 384px;
+	background-color: #488BE4;
+}
+
+.game-board{
+	width: 512px;
+	height: 384px;
+	overflow: hidden;
+	position: relative;
+}
+
+.score-container{
+	left: 10px;
+	width: 100px;
+	text-align: left;
+	position: absolute;
+}
+
+.round-container{
+	right: 10px;
+	width: 100px;
+	text-align: right;
+	position: absolute;
+}
+
+.score{
+	margin: 0 10px;
+}
+
+.round{
+	margin: 0 10px;
+}
+
+@keyframes round-anim{
+	50%{
+	}
+	100%{
+		font-size: 150%;
+		-webkit-transform: translateX(-200%) translateY(600%);
+	}
+}
+
+@keyframes round-span-anim{
+	90%{
+		-webkit-transform: rotateZ(0deg);		
+	}
+	100%{
+		-webkit-transform: rotateZ(90deg);
+	}
+}
+
+.new-round{
+	animation: round-anim 1s linear forwards;
+	animation-fill-mode: forwards;
+}
+
+.new-round span{
+	animation: round-span-anim 1s linear;
 }
 
 /*
