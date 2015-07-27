@@ -17,7 +17,7 @@
 	z-index: 0;
 	left: 512px;
 	position: absolute;
-	animation: cloud-horizontal 3s linear;
+	-webkit-animation: cloud-horizontal 3s linear;
 	-webkit-transform: translate3d(0, 0, 0);
 }
 
@@ -33,7 +33,6 @@
 	border-radius: 50%;
 	background-color: #FFFFFF;
 	position: absolute;
-	z-index: 1;
 	height: 50px;
 	width: 100px;
 }
