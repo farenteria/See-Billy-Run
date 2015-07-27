@@ -46,10 +46,8 @@ function animateWithClass(addOrRemove, action){
 				addTransition(bodyParts[i] + '-' + j);
 			}
 		}else{
-			if(action == 'slide'){
-				addRemoveActionClass(bodyParts[i], action, addOrRemove);
-				addTransition(bodyParts[i]);
-			}
+			addRemoveActionClass(bodyParts[i], action, addOrRemove);
+			addTransition(bodyParts[i]);
 		}
 	}
 
@@ -78,4 +76,9 @@ function backToDefaultAnim(action){
 		animateWithClass('remove', action);
 		makeCharacterRun();
 	}, delay);	
+}
+
+function explodeCharacter(){
+	animateWithClass('remove', 'run');
+	animateWithClass('add', 'explode');
 }

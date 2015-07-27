@@ -137,6 +137,39 @@
 	}
 }
 
+/* head */
+@keyframes explode-0{
+	50%{
+		-webkit-transform: translateY(-50px);
+	}
+	100%{
+		-webkit-transform: translateY(62px);
+	}
+}
+
+/* head bounce */
+@keyframes explode-0-2{
+	0%{
+		-webkit-transform: translateY(62px);
+	}
+	50%{
+		-webkit-transform: translateY(40px);
+	}
+	100%{
+		-webkit-transform: translateY(62px);
+	}
+}
+
+/* head roll */
+@keyframes explode-0-3{
+	0%{
+		-webkit-transform: translateY(62px);
+	}
+	100%{
+		-webkit-transform: translateX(300px) translateY(62px);
+	}
+}
+
 .arm-0-run, .leg-0-run{
 	animation: run-0 .5s linear infinite;
 	-webkit-transform: translate3d(0, 0, 0);
@@ -205,4 +238,8 @@
 .leg-1-slide{
 	animation: slide-5 .5s linear;
 	-webkit-transform: translate3d(0, 0, 0);
+}
+
+.head-explode{
+	animation: explode-0 .5s linear, explode-0-2 .5s .5s 3 linear, explode-0-3 20s 1s;
 }

@@ -90,6 +90,7 @@ function startGame(){
 
 	addRound();
 	setupInstructions();
+	makeCharacterRun();
 	removeGameOver();
 }
 
@@ -97,6 +98,8 @@ function startGame(){
 function endGame(){
 	clearInterval(newBlockInterval);
 	clearInterval(collisionInterval);
+
+	explodeCharacter();
 
 	showGameOver();
 }
