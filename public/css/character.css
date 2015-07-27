@@ -172,11 +172,15 @@
 
 /* torso */
 @keyframes explode-1{
-	50%{
-
-	}
 	100%{
-		-webkit-transform: rotate(-45deg) translateX(-150px) translateY(-200px);
+		-webkit-transform: rotateZ(-45deg) translateX(-150px) translateY(-200px);
+	}
+}
+
+/* arm 0 */
+@keyframes explode-2{
+	100%{
+		-webkit-transform: rotateZ(45deg) translateX(-100px) translateY(200px);
 	}
 }
 
@@ -256,4 +260,8 @@
 
 .torso-explode{
 	animation: explode-1 .5s linear forwards;
+}
+
+.arm-0-explode{
+	animation: explode-2 .5s linear forwards;
 }
