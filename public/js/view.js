@@ -1,5 +1,15 @@
 "use strict";
 
+// will be used to display/hide instructions
+function setupInstructions(){
+	var text = "Press up to jump, and down to slide!";
+	$('.instructions').text(text);
+
+	setTimeout(function(){
+		$('.instructions').text('');
+	}, 2000);
+}
+
 function changeScoreText(score){
 	$('#score').text(score);		
 }

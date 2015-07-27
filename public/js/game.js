@@ -88,6 +88,7 @@ function startGame(){
 	changeRoundText(round);
 
 	addRound();
+	setupInstructions();
 	console.log("start");
 }
 
