@@ -11,26 +11,42 @@
 	}
 }
 
+.cluster{
+	width: 150px;
+	height: 150px;
+	z-index: 0;
+	left: 512px;
+	position: absolute;
+	animation: cloud-horizontal 3s linear;
+	-webkit-transform: translate3d(0, 0, 0);
+}
+
+.high{
+	top: 100px;
+}
+
+.low{
+	top: 200px;
+}
+
 .cloud{
 	border-radius: 50%;
 	background-color: #FFFFFF;
 	position: absolute;
-	left: 512px;
-	z-index: 0;
-	animation: cloud-horizontal 3s linear;
-	-webkit-transform: translate3d(0, 0, 0);
+	z-index: 1;
+	height: 50px;
+	width: 100px;
 }
+
 .cloud-0{
-	height: 110px;
-	width: 200px;
+	left: 25px;
 }
 
 .cloud-1{
-	height: 220px;
-	width: 300px
+	top: 25px;
 }
 
 .cloud-2{
-	height: 150px;
-	width: 240px;
+	top: 25px;
+	left: 50px;
 }

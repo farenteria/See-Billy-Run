@@ -13,6 +13,7 @@ var round;
 var numClouds;
 var clouds;
 var cloudsInterval;
+var counter;
 
 function init(){
 	score = 0;
@@ -20,6 +21,8 @@ function init(){
 	clouds = 4;
 	blockNum = score; // Blocks and score will always be tied together (used for block id)
 	gameSpeed = 2000;
+	counter = 0;
+
 	setupEvents();
 	setupBackground();
 }
@@ -147,18 +150,22 @@ function addRound(){
 }
 
 function setupBackground(){
-	var counter = 0;
 	cloudsInterval = setInterval(function(){
-		// var randCloud = Math.floor(Math.random() * 3);
-		if(counter > 2){
-			counter = 0;
+		var highOrLow;
+
+		if(counter % 2 == 0){
+			highOrLow = 'high';
+		}else{
+			highOrLow = 'low';
 		}
-		var newCloud = new Cloud(counter);
-		newCloud.addNewCloud();
+
+		var newCluster = new Cluster(counter, highOrLow);
+
+		newCluster.addNewCloud();
 		counter++;
+
 		setTimeout(function(){
-			newCloud.removeCloud();
-			console.log($('.cloud').position().left);
+			newCluster.removeCloud();
 		}, 3000);
 	}, 3000);
 }
