@@ -170,6 +170,16 @@
 	}
 }
 
+/* torso */
+@keyframes explode-1{
+	50%{
+
+	}
+	100%{
+		-webkit-transform: rotate(-45deg) translateX(-150px) translateY(-200px);
+	}
+}
+
 .arm-0-run, .leg-0-run{
 	animation: run-0 .5s linear infinite;
 	-webkit-transform: translate3d(0, 0, 0);
@@ -242,4 +252,8 @@
 
 .head-explode{
 	animation: explode-0 .5s linear, explode-0-2 .5s .5s 3 linear, explode-0-3 20s 1s;
+}
+
+.torso-explode{
+	animation: explode-1 .5s linear forwards;
 }
