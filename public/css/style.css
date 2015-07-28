@@ -115,11 +115,17 @@ main{
 	z-index: 1;
 }
 
+.mobile-instr{
+	display: none;
+}
+
 .start-button{
 	position: absolute;
 	left: 30%;
 	width: 50% !important;
 	font-size: 120%;
+	height: 25%;
+	padding: 0;
 	z-index: 1;
 	border: none;
 	background-color: #488BE4;
@@ -226,7 +232,7 @@ main{
 	-moz-transform: rotate(-35deg);
 }
 
-/* landscape mobile devices */
+/* landscape and larger devices */
 @media screen and (min-width: 768px){
 	.start-button{
 		font-size: 250%;	
@@ -253,7 +259,8 @@ main{
 	}
 
 	.start-button{
-		width: 40% !important;
+		left: 35%;
+		width: 35% !important;
 		font-size: 250%;
 	}
 }

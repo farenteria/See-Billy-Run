@@ -2,6 +2,12 @@
 
 // will be used to display/hide instructions
 function setupInstructions(){
+	var isMobile = window.matchMedia("only screen and (max-width: 760px)");
+
+	if(isMobile.matches){
+		// $('')
+	}
+
 	$('.instructions').show();
 
 	setTimeout(function(){
@@ -61,6 +67,6 @@ function setupBackground(){
 
 		setTimeout(function(){
 			newCluster.removeCloud();
-		}, 5000);
+		}, 20000);
 	}, 2000);
 }
