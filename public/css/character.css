@@ -184,6 +184,26 @@
 	}
 }
 
+/* arm 1 */
+@keyframes explode-3{
+	50%{
+		-webkititransform: rotateZ(40deg) translateX(50px) translateY(-150px);
+	}
+	100%{
+		-webkit-transform: rotateZ(90deg) translateX(40px) translateY(-100px);
+	}
+}
+
+/* arm 1 slide after explosion */
+@keyframes explode-3-2{
+	0%{
+		-webkit-transform: rotateZ(90deg) translateX(40px) translateY(-100px);		
+	}
+	100%{
+		-webkit-transform: rotateZ(90deg) translateX(40px) translateY(-300px);
+	}
+}
+
 .arm-0-run, .leg-0-run{
 	animation: run-0 .5s linear infinite;
 	-webkit-transform: translate3d(0, 0, 0);
@@ -264,4 +284,8 @@
 
 .arm-0-explode{
 	animation: explode-2 .5s linear forwards;
+}
+
+.arm-1-explode{
+	animation: explode-3 .5s, explode-3-2 20s .5s ease-out;
 }
