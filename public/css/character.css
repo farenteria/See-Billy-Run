@@ -343,7 +343,7 @@
 }
 
 .head-explode{
-	-webkit-animation: explode-0 .5s linear, explode-0-2 .5s .5s 3 linear, explode-0-3 50s 1s;
+	-webkit-animation: explode-0 .5s linear, explode-0-2 .5s .5s 3 linear, explode-0-3 50s 1s forwards;
 }
 
 .torso-explode{
@@ -355,7 +355,7 @@
 }
 
 .arm-1-explode{
-	-webkit-animation: explode-3 .5s, explode-3-2 50s .5s ease-out;
+	-webkit-animation: explode-3 .5s, explode-3-2 50s .5s ease-out forwards;
 }
 
 .leg-0-explode{
@@ -364,8 +364,4 @@
 
 .leg-1-explode{
 	-webkit-animation: explode-5 .5s linear forwards;
-}
-
-@media screen and (min-width: 992px){
-
 }
