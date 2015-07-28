@@ -119,7 +119,7 @@ main{
 	position: absolute;
 	left: 30%;
 	width: 50% !important;
-	font-size: 250%;
+	font-size: 120%;
 	z-index: 1;
 	border: none;
 	background-color: #488BE4;
@@ -226,6 +226,13 @@ main{
 	-moz-transform: rotate(-35deg);
 }
 
+/* landscape mobile devices */
+@media screen and (min-width: 768px){
+	.start-button{
+		font-size: 250%;	
+	}
+}
+
 /* computer */
 @media screen and (min-width: 992px){
 	body{
@@ -247,5 +254,6 @@ main{
 
 	.start-button{
 		width: 40% !important;
+		font-size: 250%;
 	}
 }
