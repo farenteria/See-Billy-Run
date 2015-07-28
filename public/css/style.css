@@ -9,7 +9,7 @@ main{
 }
 
 .game-board{
-	height: 90%;
+	height: 75%;
 	width: 100%;
 	background-color: #488BE4;
 	overflow: hidden;
@@ -157,17 +157,17 @@ main{
 	position: absolute;
 	z-index: 1;
 	animation: slide-left 2s linear;
-	left: 512px;
+	left: 100%;
 	-webkit-transform: translate3d(0, 0, 0);
 	-moz-transform: translate3d(0, 0, 0);
 }
 
 .slide-block{
-	top: 300px;
+	bottom: 65px;
 }
 
 .jump-block{
-	bottom: 0px;
+	bottom: 0;
 }
 
 /*
@@ -176,7 +176,7 @@ main{
 .stick-figure{
 	height: 90px;
 	width: 50px;
-	top: 292px;
+	bottom: 0;
 	left: 50px;
 	z-index: 1;
 }
@@ -234,6 +234,9 @@ main{
 
 /* landscape and larger devices */
 @media screen and (min-width: 768px){
+	.game-board{
+		height: 90%;
+	}
 	.start-button{
 		font-size: 250%;	
 	}
