@@ -73,6 +73,14 @@ body{
 	animation: round-span-anim 1s linear;
 }
 
+.mobile-instr{
+	display: inline;
+}
+
+.computer-instr{
+	display: none;
+}
+
 .center-margin{
 	margin: 0 auto;
 }
@@ -214,4 +222,14 @@ body{
 	right: 13px;
 	-webkit-transform: rotate(-35deg);
 	-moz-transform: rotate(-35deg);
+}
+
+@media only screen and (min-width: 992px){
+	.computer-instr{
+		display: inline;
+	}
+
+	.mobile-instr{
+		display: none;
+	}
 }

@@ -1,6 +1,12 @@
 #Change log
 All notable changes to this project will be documented in this file
 
+## 1.1 /2015-07-28
+### Added
+	- Swipe controls for mobile
+### Bugs
+	- Bugs from previous update apply here
+	
 ## 1.0 / 2015-07-27
 ### Added
 	- Instructions and start button
@@ -13,7 +19,7 @@ All notable changes to this project will be documented in this file
 	- Testing code
 ### Bugs
 	- Moz-kit needs some fixing
-	
+
 ## 0.8 / 2015-07-25
 ### Added
 	- Added score and round in dom
