@@ -3,11 +3,13 @@
 */
 "use strict";
 
+var backToDefaultTimer;
 var animationTime = 300;
 var bodyParts = ['arm', 'leg', 'head', 'torso'];
 
 // sets default running animation
 function makeCharacterRun(){
+	animateWithClass('remove', 'explode');
 	animateWithClass('add', 'run');
 }
 
@@ -72,7 +74,7 @@ function addTransition(bodyPart){
 function backToDefaultAnim(action){
 	var delay = animationTime + 200;
 
-	setTimeout(function(){
+	backToDefaultTimer = setTimeout(function(){
 		animateWithClass('remove', action);
 		makeCharacterRun();
 	}, delay);	
@@ -80,5 +82,8 @@ function backToDefaultAnim(action){
 
 function explodeCharacter(){
 	animateWithClass('remove', 'run');
+	animateWithClass('remove', 'slide');
+	animateWithClass('remove', 'jump');
+	clearTimeout(backToDefaultTimer);
 	animateWithClass('add', 'explode');
 }
