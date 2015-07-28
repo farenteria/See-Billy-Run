@@ -25,11 +25,11 @@
 }
 
 .high{
-	top: 100px;
+	top: 20%;
 }
 
 .low{
-	top: 200px;
+	top: 40%;
 }
 
 .cloud{
@@ -53,6 +53,22 @@
 	left: 50px;
 }
 
+@media screen and (min-width: 768px){
+	.high{
+		top: 20%;
+	}
+
+	.low{
+		top: 60%;
+	}		
+}
+
 @media screen and (min-width: 992px){
-	
+	.high{
+		top: 20%;
+	}
+
+	.low{
+		top: 60%;
+	}	
 }
