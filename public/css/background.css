@@ -1,15 +1,15 @@
 /*
 	Will be used to make our background blue, and with clouds
 */
-.background{
-	background-color: #488BE4;
-}
-
-@keyframes cloud-horizontal{
+@-webkit-keyframes cloud-horizontal{
 	100%{
 		-webkit-transform: translateX(-2000px);
 		-moz-transform: translateX(-2000px);
 	}
+}
+
+.background{
+	background-color: #488BE4;
 }
 
 .cluster{

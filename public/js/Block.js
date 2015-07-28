@@ -3,7 +3,7 @@
 // strictly used to insert and remove new block objects
 function Block(type, id){
 	var blockType = type;
-	var newBlock = '<div class="block ' + blockType + '-block"></div>';
+	var newBlock = '<div class="block ' + blockType + '-block front-pos absolute-pos"></div>';
 
 	// adds new block div into dom
 	this.insertBlock = function(){

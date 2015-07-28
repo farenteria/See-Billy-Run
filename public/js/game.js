@@ -31,16 +31,20 @@ function init(){
 function setupEvents(){
 	$('body').on('keydown', function(event){
 		//these are for user pressing up or down key
-		if(event.which == 38){
-			makeCharacterJump();
-		}else if(event.which == 40){
-			makeCharacterSlide();
+		if(event.which == 38 || event.which == 87){
+			animate('jump');
+		}else if(event.which == 40 || event.which == 83){
+			animate('slide');
 		}
 	});
 
 	// for mobile devices
-	$('body').on('swipeleft', makeCharacterJump);
-	$('body').on('swiperight', makeCharacterSlide);
+	$('body').on('swipeleft', function(){
+		animate('jump');
+	});
+	$('body').on('swiperight', function(){
+		animate('slide');
+	});
 
 	// start and end the game at will
 	$('#start-button').on('click', startGame);
@@ -85,7 +89,7 @@ function startGame(){
 
 	addRound();
 	setupInstructions();
-	makeCharacterRun();
+	animate('run');
 	removeStartButton();
 }
 

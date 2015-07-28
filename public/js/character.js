@@ -7,28 +7,22 @@ var backToDefaultTimer;
 var animationTime = 300;
 var bodyParts = ['arm', 'leg', 'head', 'torso'];
 
+function animate(action){
+	var delay = animationTime + 200;
+
+	animateWithClass('remove', 'explode');
+	animateWithClass('add', action);
+	
+	backToDefaultTimer = setTimeout(function(){
+		animateWithClass('remove', action);
+		makeCharacterRun();
+	}, delay);
+}
+
 // sets default running animation
 function makeCharacterRun(){
 	animateWithClass('remove', 'explode');
 	animateWithClass('add', 'run');
-}
-
-//jumping animation for character
-function makeCharacterJump(){
-	// we remove running animation first before adding jumping animation
-	animateWithClass('add', 'jump');
-
-	// remove jump class for landing, and go back to running
-	backToDefaultAnim('jump');
-}
-
-// sliding animation
-function makeCharacterSlide(){
-	// we remove running animation first before adding sliding animation
-	animateWithClass('add', 'slide');
-
-	// remove slide class, and go back to running
-	backToDefaultAnim('slide');
 }
 
 /*
@@ -72,16 +66,6 @@ function addRemoveActionClass(bodyPart, action, addOrRemove){
 // allows the animation for set time as stated in .transition-time in style.css
 function addTransition(bodyPart){
 	$('#' + bodyPart).addClass('transition-time');	
-}
-
-// Will go back to default animation after a set period of time
-function backToDefaultAnim(action){
-	var delay = animationTime + 200;
-
-	backToDefaultTimer = setTimeout(function(){
-		animateWithClass('remove', action);
-		makeCharacterRun();
-	}, delay);	
 }
 
 // makes character explode after game has ended

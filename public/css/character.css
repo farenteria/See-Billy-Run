@@ -4,7 +4,7 @@
 */
 
 /* arm and leg 0 */
-@keyframes run-0{
+@-webkit-keyframes run-0{
 	0%{
 		-webkit-transform: rotateZ(50deg);
 		-moz-transform: rotateZ(50deg);
@@ -28,7 +28,7 @@
 }
 
 /* arm and leg 1 */
-@keyframes run-1{
+@-webkit-keyframes run-1{
 	0%{
 		-webkit-transform: rotateZ(-50deg);
 		-moz-transform: rotateZ(-50deg);
@@ -44,7 +44,7 @@
 }
 
 /* entire body */
-@keyframes jump-0{
+@-webkit-keyframes jump-0{
 	50%{
 		-webkit-transform: translateY(-50px);
 		-moz-transform: translateY(-50px);
@@ -52,7 +52,7 @@
 }
 
 /* arm 0 */
-@keyframes jump-1{
+@-webkit-keyframes jump-1{
 	50%{
 		-webkit-transform: rotateZ(70deg) translateX(-5px) translateY(5px);
 		-moz-transform: rotateZ(70deg) translateX(-5px) translateY(5px);
@@ -60,7 +60,7 @@
 }
 
 /* arm 1 */
-@keyframes jump-2{
+@-webkit-keyframes jump-2{
 	25%{
 		-webkit-transform: rotateZ(-70deg) translateX(15px);
 		-moz-transform: rotateZ(-70deg) translateX(15px);
@@ -72,7 +72,7 @@
 }
 
 /* leg 0 */
-@keyframes jump-3{
+@-webkit-keyframes jump-3{
 	50%{
 		-webkit-transform: rotateZ(70deg) translateX(-5px) translateY(2px);
 		-moz-transform: rotateZ(70deg) translateX(-5px) translateY(2px);
@@ -80,7 +80,7 @@
 }
 
 /* leg 1 */
-@keyframes jump-4{
+@-webkit-keyframes jump-4{
 	50%{
 		-webkit-transform: rotateZ(-120deg) translateX(10px) translateY(10px);
 		-moz-transform: rotateZ(-120deg) translateX(10px) translateY(10px);
@@ -88,7 +88,7 @@
 }
 
 /* head */
-@keyframes slide-0{
+@-webkit-keyframes slide-0{
 	50%{
 		-webkit-transform: translateY(10px);
 		-moz-transform: translateY(10px);
@@ -96,7 +96,7 @@
 }
 
 /* torso */
-@keyframes slide-1{
+@-webkit-keyframes slide-1{
 	25%{
 		-webkit-transform: rotateZ(-45deg) translateX(20px) translateY(10px);
 		-moz-transform: rotateZ(-45deg) translateX(20px) translateY(10px);
@@ -108,7 +108,7 @@
 }
 
 /* arm 0 */
-@keyframes slide-2{
+@-webkit-keyframes slide-2{
 	50%{
 		-webkit-transform: rotateZ(90deg) translateX(-10px) translateY(-10px);
 		-moz-transform: rotateZ(90deg) translateX(-10px) translateY(-10px);
@@ -120,7 +120,7 @@
 }
 
 /* arm 1 */
-@keyframes slide-3{
+@-webkit-keyframes slide-3{
 	50%{
 		-webkit-transform: rotateZ(60deg);
 		-moz-transform: rotateZ(60deg);
@@ -132,7 +132,7 @@
 }
 
 /* leg 0 */
-@keyframes slide-4{
+@-webkit-keyframes slide-4{
 	50%{
 		-webkit-transform: rotateZ(-120deg) translateX(5px) translateY(80px);
 		-moz-transform: rotateZ(-120deg) translateX(5px) translateY(80px);
@@ -144,7 +144,7 @@
 }
 
 /* leg 1 */
-@keyframes slide-5{
+@-webkit-keyframes slide-5{
 	50%{
 		-webkit-transform: rotateZ(-120deg) translateX(20px) translateY(58px);
 		-moz-transform: rotateZ(-120deg) translateX(20px) translateY(58px);
@@ -156,7 +156,7 @@
 }
 
 /* entire body */
-@keyframes slide-6{
+@-webkit-keyframes slide-6{
 	50%{
 		-webkit-transform: translateY(50px);
 		-moz-transform: translateY(50px);
@@ -164,7 +164,7 @@
 }
 
 /* head */
-@keyframes explode-0{
+@-webkit-keyframes explode-0{
 	50%{
 		-webkit-transform: translateY(-50px);
 		-moz-transform: translateY(-50px);
@@ -176,7 +176,7 @@
 }
 
 /* head bounce */
-@keyframes explode-0-2{
+@-webkit-keyframes explode-0-2{
 	0%{
 		-webkit-transform: translateY(62px);
 		-moz-transform: translateY(62px);
@@ -192,7 +192,7 @@
 }
 
 /* head roll */
-@keyframes explode-0-3{
+@-webkit-keyframes explode-0-3{
 	0%{
 		-webkit-transform: translateY(62px);
 		-moz-transform: translateY(62px);
@@ -204,7 +204,7 @@
 }
 
 /* torso */
-@keyframes explode-1{
+@-webkit-keyframes explode-1{
 	100%{
 		-webkit-transform: rotateZ(-45deg) translateX(-150px) translateY(-200px);
 		-moz-transform: rotateZ(-45deg) translateX(-150px) translateY(-200px);
@@ -212,7 +212,7 @@
 }
 
 /* arm 0 */
-@keyframes explode-2{
+@-webkit-keyframes explode-2{
 	100%{
 		-webkit-transform: rotateZ(45deg) translateX(-100px) translateY(200px);
 		-moz-transform: rotateZ(45deg) translateX(-100px) translateY(200px);
@@ -220,7 +220,7 @@
 }
 
 /* arm 1 */
-@keyframes explode-3{
+@-webkit-keyframes explode-3{
 	50%{
 		-webkit-transform: rotateZ(40deg) translateX(50px) translateY(-150px);
 		-moz-transform: rotateZ(40deg) translateX(50px) translateY(-150px);
@@ -232,7 +232,7 @@
 }
 
 /* arm 1 slide after explosion */
-@keyframes explode-3-2{
+@-webkit-keyframes explode-3-2{
 	0%{
 		-webkit-transform: rotateZ(90deg) translateX(40px) translateY(-100px);
 		-moz-transform: rotateZ(90deg) translateX(40px) translateY(-100px);		
@@ -244,7 +244,7 @@
 }
 
 /* leg 0 explosion */
-@keyframes explode-4{
+@-webkit-keyframes explode-4{
 	100%{
 		-webkit-transform: rotateZ(100deg) translateX(100px);
 		-moz-transform: rotateZ(100deg) translateX(100px);
@@ -252,7 +252,7 @@
 }
 
 /* leg 1 explosion */
-@keyframes explode-5{
+@-webkit-keyframes explode-5{
 	100%{
 		-webkit-transform: rotateZ(-100deg) translateX(-100px);
 		-moz-transform: rotateZ(-100deg) translateX(-100px);		
@@ -260,112 +260,112 @@
 }
 
 .arm-0-run, .leg-0-run{
-	animation: run-0 .5s linear infinite;
+	-webkit-animation: run-0 .5s linear infinite;
 	-webkit-transform: translate3d(0, 0, 0);
 }
 
 .arm-1-run, .leg-1-run{
-	animation: run-1 .5s linear infinite;
+	-webkit-animation: run-1 .5s linear infinite;
 	-webkit-transform: translate3d(0, 0, 0);
 	-moz-transform: translate3d(0, 0, 0);
 }
 
 .stick-figure-jump{
-	animation: jump-0 .5s linear;
+	-webkit-animation: jump-0 .5s linear;
 	-webkit-transform: translate3d(0, 0, 0);
 	-moz-transform: translate3d(0, 0, 0);
 }
 
 .arm-0-jump{
-	animation: jump-1 .5s linear;
+	-webkit-animation: jump-1 .5s linear;
 	-webkit-transform: translate3d(0, 0, 0);
 	-moz-transform: translate3d(0, 0, 0);
 }
 
 .arm-1-jump{
-	animation: jump-2 .5s linear;
+	-webkit-animation: jump-2 .5s linear;
 	-webkit-transform: translate3d(0, 0, 0);
 	-moz-transform: translate3d(0, 0, 0);
 }
 
 .leg-0-jump{
-	animation: jump-3 .5s linear;
+	-webkit-animation: jump-3 .5s linear;
 	-webkit-transform: translate3d(0, 0, 0);
 	-moz-transform: translate3d(0, 0, 0);
 }
 
 .leg-1-jump{
-	animation: jump-4 .5s linear;
+	-webkit-animation: jump-4 .5s linear;
 	-webkit-transform: translate3d(0, 0, 0);
 	-moz-transform: translate3d(0, 0, 0);
 }
 
 .stick-figure-slide{
-	animation: slide-6 .5s linear;
+	-webkit-animation: slide-6 .5s linear;
 	-webkit-transform: translate3d(0, 0, 0);
 	-moz-transform: translate3d(0, 0, 0);
 }
 
 .head-slide{
-	animation: slide-0 .5s linear;
+	-webkit-animation: slide-0 .5s linear;
 	-webkit-transform: translate3d(0, 0, 0);
 	-moz-transform: translate3d(0, 0, 0);
 }
 
 .torso-slide{
-	animation: slide-1 .5s linear;
+	-webkit-animation: slide-1 .5s linear;
 	-webkit-transform: translate3d(0, 0, 0);
 	-moz-transform: translate3d(0, 0, 0);
 }
 
 .arm-0-slide{
-	animation: slide-2 .5s linear;
+	-webkit-animation: slide-2 .5s linear;
 	-webkit-transform: translate3d(0, 0, 0);
 	-moz-transform: translate3d(0, 0, 0);
 }
 
 .arm-1-slide{
-	animation: slide-3 .5s linear;
+	-webkit-animation: slide-3 .5s linear;
 	-webkit-transform: translate3d(0, 0, 0);
 	-moz-transform: translate3d(0, 0, 0);
 }
 
 .leg-0-slide{
-	animation: slide-4 .5s linear;
+	-webkit-animation: slide-4 .5s linear;
 	-webkit-transform: translate3d(0, 0, 0);
 	-moz-transform: translate3d(0, 0, 0);
 }
 
 .leg-1-slide{
-	animation: slide-5 .5s linear;
+	-webkit-animation: slide-5 .5s linear;
 	-webkit-transform: translate3d(0, 0, 0);
 	-moz-transform: translate3d(0, 0, 0);
 }
 
 .head-explode{
-	animation: explode-0 .5s linear, explode-0-2 .5s .5s 3 linear, explode-0-3 50s 1s;
+	-webkit-animation: explode-0 .5s linear, explode-0-2 .5s .5s 3 linear, explode-0-3 50s 1s;
 }
 
 .torso-explode{
-	animation: explode-1 .5s linear forwards;
+	-webkit-animation: explode-1 .5s linear forwards;
 }
 
 .arm-0-explode{
-	animation: explode-2 .5s linear forwards;
+	-webkit-animation: explode-2 .5s linear forwards;
 }
 
 .arm-1-explode{
-	animation: explode-3 .5s, explode-3-2 50s .5s ease-out;
+	-webkit-animation: explode-3 .5s, explode-3-2 50s .5s ease-out;
 }
 
 .leg-0-explode{
-	animation: explode-4 .5s linear forwards;
+	-webkit-animation: explode-4 .5s linear forwards;
 }
 
 .leg-1-explode{
-	animation: explode-5 .5s linear forwards;
+	-webkit-animation: explode-5 .5s linear forwards;
 }
 
 @media screen and (min-width: 992px){
-	
+
 }

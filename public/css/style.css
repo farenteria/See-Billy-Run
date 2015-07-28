@@ -1,11 +1,53 @@
-/* mobile and global */
+/* 
+	mobile and global
+*/
+
+/*
+	common traits
+*/
+.center-margin{
+	margin: 0 auto;
+}
+
+.absolute-pos{
+	position: absolute;
+}
+
+.relative-pos{
+	position: relative;
+}
+
+.med-font{
+	font-size: 150%;
+}
+
+.front-pos{
+	z-index: 1;
+}
+
+
+/*
+	dom elements
+*/
 body{
 	text-align: center;
-	position: relative;
 }
 
 main{
 	height: 350px;
+}
+
+/*
+	Everything to do with game board
+*/
+@-webkit-keyframes round-span-anim{
+	0%{
+		-webkit-transform: rotateZ(0deg);		
+	}
+	100%{
+		-webkit-transform: rotateZ(360deg);
+		-moz-transform: rotateZ(360deg);
+	}
 }
 
 .game-board{
@@ -13,25 +55,18 @@ main{
 	width: 100%;
 	background-color: #488BE4;
 	overflow: hidden;
-	position: relative;	
 }
 
 .score-container{
 	left: 5%;
-	width: 100px;
+	width: 200px;
 	text-align: left;
-	position: absolute;
-	z-index: 1;
-	font-size: 150%;
 }
 
 .round-container{
 	right: 5%;
 	width: 150px;
 	text-align: right;
-	position: absolute;
-	z-index: 1;
-	font-size: 150%;
 }
 
 .score{
@@ -40,22 +75,11 @@ main{
 
 .round{
 	margin: 0 10px;
-
-}
-
-@keyframes round-span-anim{
-	50%{
-		-webkit-transform: rotateZ(0deg);
-		-moz-transform: rotateZ(0deg);		
-	}
-	100%{
-		-webkit-transform: rotateZ(360deg);
-		-moz-transform: rotateZ(360deg);
-	}
 }
 
 .new-round span{
-	animation: round-span-anim 1s linear;
+	-webkit-animation: round-span-anim 1s linear;
+	-moz-animation: round-span-anim 1s linear;
 }
 
 .mobile-instr{
@@ -64,14 +88,6 @@ main{
 
 .computer-instr{
 	display: none;
-}
-
-.center-margin{
-	margin: 0 auto;
-}
-
-.absolute-pos{
-	position: absolute;
 }
 
 .black-background{
@@ -83,11 +99,8 @@ main{
 }
 
 .instructions{
-	position: absolute;
 	top: 40%;
 	width: 100%;
-	font-size: 150%;
-	z-index: 1;
 }
 
 .mobile-instr{
@@ -99,13 +112,11 @@ main{
 }
 
 .start-button{
-	position: absolute;
-	left: 30%;
+	left: 25%;
 	width: 50% !important;
 	font-size: 120%;
 	height: 25%;
 	padding: 0;
-	z-index: 1;
 	border: none;
 	background-color: #488BE4;
 	top: 25%;
@@ -118,9 +129,7 @@ main{
 /*
 	Block
 */
-@keyframes slide-left{
-	0%{		
-	}
+@-webkit-keyframes slide-left{
 	100%{
 		left: -100%;
 	}
@@ -129,11 +138,10 @@ main{
 .block{
 	height: 30px;
 	width: 30px;
-	background-color: blue;
-	position: absolute;
-	z-index: 1;
-	animation: slide-left 2s linear;
+	background-color: #8c4f12;
+	border-color: #FFFFFF;
 	left: 100%;
+	-webkit-animation: slide-left 2s linear;
 	-webkit-transform: translate3d(0, 0, 0);
 	-moz-transform: translate3d(0, 0, 0);
 }
@@ -154,7 +162,6 @@ main{
 	width: 50px;
 	bottom: 0;
 	left: 50px;
-	z-index: 1;
 }
 
 .stick-width{
@@ -213,26 +220,24 @@ main{
 	.game-board{
 		height: 90%;
 	}
+
 	.start-button{
-		font-size: 250%;	
+		left: 26%;
+		font-size: 200%;
 	}
 }
 
 /* computer */
 @media screen and (min-width: 992px){
-	body{
-		/*width: 512px;*/
-	}
-
 	.game-board{
 		width: 100%;
 		height: 384px;
 	}
 
 	.start-button{
-		left: 35%;
+		left: 33%;
 		width: 35% !important;
-		font-size: 250%;
+		font-size: 200%;
 	}
 
 	.instructions{
