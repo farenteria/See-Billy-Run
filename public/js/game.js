@@ -38,15 +38,6 @@ function setupEvents(){
 		}
 	});
 
-	//The following events will be used purely for testing
-	$('#run').on('click', makeCharacterRun);
-	$('#stop').on('click', function(){
-		animateWithClass('remove', 'run');
-	});
-	$('#jump').on('click', makeCharacterJump);
-	$('#slide').on('click', makeCharacterSlide);
-	$('#block-button').on('click', getNextBlock);
-
 	//start and end the game at will
 	$('#start-button').on('click', startGame);
 	$('#stop-game-button').on('click', endGame);

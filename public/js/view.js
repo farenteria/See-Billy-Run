@@ -26,6 +26,11 @@ function changeRoundText(round){
 function showGameOver(){
 	var text = "Game Over!";
 	$('.game-over').text(text);
+
+	$('#start-button').removeClass('first-start-button');
+	$('#start-button').addClass('second-start-button');
+	$('#start-button').toggle();
+
 }
 
 function removeGameOver(){
@@ -37,7 +42,7 @@ function changeStartText(){
 }
 
 function removeStartButton(){
-	$('#start-button').remove();
+	$('#start-button').toggle();
 }
 
 function setupBackground(){
