@@ -211,6 +211,13 @@
 	}
 }
 
+/* leg 1 explosion */
+@keyframes explode-5{
+	100%{
+		-webkit-transform: rotateZ(-100deg) translateX(-100px);		
+	}
+}
+
 .arm-0-run, .leg-0-run{
 	animation: run-0 .5s linear infinite;
 	-webkit-transform: translate3d(0, 0, 0);
@@ -299,4 +306,8 @@
 
 .leg-0-explode{
 	animation: explode-4 .5s linear forwards;
+}
+
+.leg-1-explode{
+	animation: explode-5 .5s linear forwards;
 }
