@@ -92,6 +92,7 @@ function startGame(){
 	setupInstructions();
 	makeCharacterRun();
 	removeGameOver();
+	removeStartButton();
 }
 
 // clears the interval to end the game
@@ -102,6 +103,7 @@ function endGame(){
 	explodeCharacter();
 
 	showGameOver();
+	changeStartText();
 }
 
 // will detect if div surrounding character collides with a block

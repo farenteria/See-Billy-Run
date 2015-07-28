@@ -103,6 +103,16 @@ body{
 	z-index: 1;
 }
 
+.start-button{
+	position: absolute;
+	left: 30%;
+	top: 45%;
+	font-size: 250%;
+	z-index: 1;
+	border: none;
+	background-color: #488BE4;
+}
+
 /*
 	Block
 */

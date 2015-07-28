@@ -32,6 +32,14 @@ function removeGameOver(){
 	$('.game-over').text('');
 }
 
+function changeStartText(){
+	$('.start-text').text('Try Again?');
+}
+
+function removeStartButton(){
+	$('#start-button').remove();
+}
+
 function setupBackground(){
 	cloudsInterval = setInterval(function(){
 		var highOrLow;
