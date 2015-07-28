@@ -166,7 +166,7 @@
 		-webkit-transform: translateY(62px);
 	}
 	100%{
-		-webkit-transform: translateX(300px) translateY(62px);
+		-webkit-transform: translateX(700px) translateY(62px);
 	}
 }
 
@@ -190,7 +190,7 @@
 		-webkititransform: rotateZ(40deg) translateX(50px) translateY(-150px);
 	}
 	100%{
-		-webkit-transform: rotateZ(90deg) translateX(40px) translateY(-100px);
+		-webkit-transform: rotateZ(90deg) translateX(40px) translateY(100px);
 	}
 }
 
@@ -289,7 +289,7 @@
 }
 
 .head-explode{
-	animation: explode-0 .5s linear, explode-0-2 .5s .5s 3 linear, explode-0-3 20s 1s;
+	animation: explode-0 .5s linear, explode-0-2 .5s .5s 3 linear, explode-0-3 50s 1s;
 }
 
 .torso-explode{
@@ -301,7 +301,7 @@
 }
 
 .arm-1-explode{
-	animation: explode-3 .5s, explode-3-2 20s .5s ease-out;
+	animation: explode-3 .5s, explode-3-2 50s .5s ease-out;
 }
 
 .leg-0-explode{
