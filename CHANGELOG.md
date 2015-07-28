@@ -1,12 +1,20 @@
 #Change log
 All notable changes to this project will be documented in this file
 
-## 1.1 /2015-07-28
+## 1.2 / 2015-07-28
+### Added
+	- Screen size detection, and act accordingly
+### Fixed
+	- Several animations for different browsers
+### Bugs
+	- Firefox needs a final coat
+	
+## 1.1 / 2015-07-28
 ### Added
 	- Swipe controls for mobile
 ### Bugs
 	- Bugs from previous update apply here
-	
+
 ## 1.0 / 2015-07-27
 ### Added
 	- Instructions and start button
