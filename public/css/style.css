@@ -13,7 +13,8 @@ main{
 	width: 100%;
 	background-color: #488BE4;
 	overflow: hidden;
-	position: relative;
+	position: relative;	
+	margin: 0 auto;
 }
 
 .score-container{
@@ -117,6 +118,7 @@ main{
 .start-button{
 	position: absolute;
 	left: 30%;
+	width: 50% !important;
 	font-size: 250%;
 	z-index: 1;
 	border: none;
@@ -124,7 +126,7 @@ main{
 }
 
 .first-start-button{
-	top: 45%;
+	top: 25%;
 }
 
 .second-start-button{
@@ -227,11 +229,11 @@ main{
 /* computer */
 @media screen and (min-width: 992px){
 	body{
-		width: 512px;
+		/*width: 512px;*/
 	}
 
 	.game-board{
-		width: 512px;
+		width: 100%;
 		height: 384px;
 	}
 
@@ -241,5 +243,9 @@ main{
 
 	.mobile-instr{
 		display: none;
+	}
+
+	.start-button{
+		width: 40% !important;
 	}
 }
