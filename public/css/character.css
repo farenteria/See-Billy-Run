@@ -365,3 +365,7 @@
 .leg-1-explode{
 	animation: explode-5 .5s linear forwards;
 }
+
+@media screen and (min-width: 992px){
+	
+}

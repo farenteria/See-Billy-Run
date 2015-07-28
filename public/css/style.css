@@ -1,17 +1,15 @@
+/* mobile and global */
 body{
 	text-align: center;
 	position: relative;
-}
-
-#game-canvas{
-	width: 512px;
-	height: 384px;
-	background-color: #488BE4;
+	height: 300px;
+	width: 100%;
 }
 
 .game-board{
-	width: 512px;
-	height: 384px;
+	height: 300px;
+	width: 100%;
+	background-color: #488BE4;
 	overflow: hidden;
 	position: relative;
 }
@@ -224,7 +222,17 @@ body{
 	-moz-transform: rotate(-35deg);
 }
 
+/* computer */
 @media screen and (min-width: 992px){
+	body{
+		width: 512px;
+	}
+
+	.game-board{
+		width: 512px;
+		height: 384px;
+	}
+
 	.computer-instr{
 		display: inline;
 	}
