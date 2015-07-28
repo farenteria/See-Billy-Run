@@ -2,11 +2,10 @@
 
 // will be used to display/hide instructions
 function setupInstructions(){
-	var text = "Press up to jump, and down to slide!";
-	$('.instructions').text(text);
+	$('.instructions').show();
 
 	setTimeout(function(){
-		$('.instructions').text('');
+		$('.instructions').hide();
 	}, 2000);
 }
 

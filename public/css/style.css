@@ -224,7 +224,7 @@ body{
 	-moz-transform: rotate(-35deg);
 }
 
-@media only screen and (min-width: 992px){
+@media screen and (min-width: 992px){
 	.computer-instr{
 		display: inline;
 	}
