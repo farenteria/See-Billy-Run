@@ -1,6 +1,19 @@
 #Change log
 All notable changes to this project will be documented in this file
 
+## 1.0 / 2015-07-27
+### Added
+	- Instructions and start button
+	- Explosion animation
+	- More styling all around
+	- moz-kit for firefox testing
+### Fixed
+	- Several elements look and play nicely now
+### Removed
+	- Testing code
+### Bugs
+	- Moz-kit needs some fixing
+	
 ## 0.8 / 2015-07-25
 ### Added
 	- Added score and round in dom
