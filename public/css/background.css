@@ -8,6 +8,7 @@
 @keyframes cloud-horizontal{
 	100%{
 		-webkit-transform: translateX(-650px);
+		-moz-transform: translateX(-650px);
 	}
 }
 
@@ -19,6 +20,8 @@
 	position: absolute;
 	-webkit-animation: cloud-horizontal 3s linear;
 	-webkit-transform: translate3d(0, 0, 0);
+	-moz-animation: cloud-horizontal 3s linear;
+	-moz-transform: translate3d(0, 0, 0);
 }
 
 .high{

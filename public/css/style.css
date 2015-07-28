@@ -49,15 +49,18 @@ body{
 	100%{
 		font-size: 150%;
 		-webkit-transform: translateX(-200%) translateY(600%);
+		-moz-transform: translateX(-200%) translateY(600%);
 	}
 }
 
 @keyframes round-span-anim{
 	90%{
-		-webkit-transform: rotateZ(0deg);		
+		-webkit-transform: rotateZ(0deg);
+		-moz-transform: rotateZ(0deg);		
 	}
 	100%{
 		-webkit-transform: rotateZ(90deg);
+		-moz-transform: rotateZ(90deg);
 	}
 }
 
@@ -140,6 +143,7 @@ body{
 	animation: slide-left 2s linear;
 	left: 512px;
 	-webkit-transform: translate3d(0, 0, 0);
+	-moz-transform: translate3d(0, 0, 0);
 }
 
 .slide-block{
@@ -186,11 +190,13 @@ body{
 .arm-0{
 	left: 15px;
 	-webkit-transform: rotate(25deg);
+	-moz-transform: rotate(25deg);
 }
 
 .arm-1{
 	right: 15px;
 	-webkit-transform: rotate(-25deg);
+	-moz-transform: rotate(-25deg);
 }
 
 .legs{
@@ -201,9 +207,11 @@ body{
 .leg-0{
 	left: 13px;
 	-webkit-transform: rotate(35deg);
+	-moz-transform: rotate(35deg);
 }
 
 .leg-1{
 	right: 13px;
 	-webkit-transform: rotate(-35deg);
+	-moz-transform: rotate(-35deg);
 }
