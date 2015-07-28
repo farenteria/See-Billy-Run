@@ -17,7 +17,7 @@ main{
 }
 
 .score-container{
-	left: 10px;
+	left: 5%;
 	width: 100px;
 	text-align: left;
 	position: absolute;
@@ -26,8 +26,8 @@ main{
 }
 
 .round-container{
-	right: 10px;
-	width: 100px;
+	right: 5%;
+	width: 150px;
 	text-align: right;
 	position: absolute;
 	z-index: 1;
@@ -43,30 +43,15 @@ main{
 
 }
 
-@keyframes round-anim{
-	50%{
-	}
-	100%{
-		font-size: 150%;
-		-webkit-transform: translateX(-200%) translateY(600%);
-		-moz-transform: translateX(-200%) translateY(600%);
-	}
-}
-
 @keyframes round-span-anim{
-	90%{
+	50%{
 		-webkit-transform: rotateZ(0deg);
 		-moz-transform: rotateZ(0deg);		
 	}
 	100%{
-		-webkit-transform: rotateZ(90deg);
-		-moz-transform: rotateZ(90deg);
+		-webkit-transform: rotateZ(360deg);
+		-moz-transform: rotateZ(360deg);
 	}
-}
-
-.new-round{
-	animation: round-anim 1s linear forwards;
-	animation-fill-mode: forwards;
 }
 
 .new-round span{
@@ -74,7 +59,7 @@ main{
 }
 
 .mobile-instr{
-	display: inline;
+	display: none;
 }
 
 .computer-instr{
@@ -99,9 +84,8 @@ main{
 
 .instructions{
 	position: absolute;
-	top: 200px;
-	left: 150px;
-	width: 200px;
+	top: 40%;
+	width: 100%;
 	font-size: 150%;
 	z-index: 1;
 }
@@ -245,17 +229,14 @@ main{
 		height: 384px;
 	}
 
-/*	.computer-instr{
-		display: inline;
-	}
-
-	.mobile-instr{
-		display: none;
-	}*/
-
 	.start-button{
 		left: 35%;
 		width: 35% !important;
 		font-size: 250%;
+	}
+
+	.instructions{
+		width: 40%;
+		left: 30%;
 	}
 }

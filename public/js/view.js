@@ -4,11 +4,7 @@ var isMobile = window.matchMedia("only screen and (max-width: 991px)");
 
 // will be used to display/hide instructions
 function setupInstructions(){
-	if(isMobile.matches){
-		$('.mobile-instr').toggle();
-	}else{
-		$('.computer-instr').toggle();
-	}
+	checkIfMobile();
 
 	$('.instructions').show();
 
@@ -34,11 +30,7 @@ function showGameOver(){
 	$('#start-button').removeClass('first-start-button');
 	$('#start-button').addClass('second-start-button');
 	$('#start-button').toggle();
-	if(isMobile.matches){
-		$('.mobile-instr').toggle();
-	}else{
-		$('.computer-instr').toggle();
-	}
+	checkIfMobile();
 }
 
 function changeStartText(){
@@ -68,4 +60,12 @@ function setupBackground(){
 			newCluster.removeCloud();
 		}, 20000);
 	}, 2000);
+}
+
+function checkIfMobile(){
+	if(isMobile.matches){
+		$('.mobile-instr').toggle();
+	}else{
+		$('.computer-instr').toggle();
+	}	
 }
