@@ -1,11 +1,13 @@
 "use strict";
 
+var isMobile = window.matchMedia("only screen and (max-width: 991px)");
+
 // will be used to display/hide instructions
 function setupInstructions(){
-	var isMobile = window.matchMedia("only screen and (max-width: 760px)");
-
 	if(isMobile.matches){
-		// $('')
+		$('.mobile-instr').toggle();
+	}else{
+		$('.computer-instr').toggle();
 	}
 
 	$('.instructions').show();
@@ -29,17 +31,14 @@ function changeRoundText(round){
 }
 
 function showGameOver(){
-	var text = "Game Over!";
-	$('.game-over').text(text);
-
 	$('#start-button').removeClass('first-start-button');
 	$('#start-button').addClass('second-start-button');
 	$('#start-button').toggle();
-
-}
-
-function removeGameOver(){
-	$('.game-over').text('');
+	if(isMobile.matches){
+		$('.mobile-instr').toggle();
+	}else{
+		$('.computer-instr').toggle();
+	}
 }
 
 function changeStartText(){

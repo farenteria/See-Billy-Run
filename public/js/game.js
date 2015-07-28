@@ -41,7 +41,7 @@ function setupEvents(){
 	// for mobile devices
 	$('body').on('swipeleft', makeCharacterJump);
 	$('body').on('swiperight', makeCharacterSlide);
-	
+
 	// start and end the game at will
 	$('#start-button').on('click', startGame);
 	$('#stop-game-button').on('click', endGame);
@@ -86,7 +86,6 @@ function startGame(){
 	addRound();
 	setupInstructions();
 	makeCharacterRun();
-	removeGameOver();
 	removeStartButton();
 }
 

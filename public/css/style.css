@@ -14,7 +14,6 @@ main{
 	background-color: #488BE4;
 	overflow: hidden;
 	position: relative;	
-	margin: 0 auto;
 }
 
 .score-container{
@@ -98,14 +97,6 @@ main{
 	transition: .3s;
 }
 
-.game-over{
-	position: absolute;
-	left: 30%;
-	top: 45%;
-	font-size: 250%;
-	z-index: 1;
-}
-
 .instructions{
 	position: absolute;
 	top: 200px;
@@ -119,6 +110,10 @@ main{
 	display: none;
 }
 
+.computer-instr{
+	display: none;
+}
+
 .start-button{
 	position: absolute;
 	left: 30%;
@@ -129,14 +124,11 @@ main{
 	z-index: 1;
 	border: none;
 	background-color: #488BE4;
-}
-
-.first-start-button{
 	top: 25%;
 }
 
 .second-start-button{
-	top: 70%;
+	left: 25%;
 }
 
 /*
@@ -146,7 +138,7 @@ main{
 	0%{		
 	}
 	100%{
-		left: -512px;
+		left: -100%;
 	}
 }
 
@@ -253,13 +245,13 @@ main{
 		height: 384px;
 	}
 
-	.computer-instr{
+/*	.computer-instr{
 		display: inline;
 	}
 
 	.mobile-instr{
 		display: none;
-	}
+	}*/
 
 	.start-button{
 		left: 35%;
