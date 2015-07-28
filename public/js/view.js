@@ -38,7 +38,7 @@ function removeGameOver(){
 }
 
 function changeStartText(){
-	$('.start-text').text('Try Again?');
+	$('#start-button').text('Try Again?');
 }
 
 function removeStartButton(){
