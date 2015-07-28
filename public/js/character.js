@@ -16,7 +16,6 @@ function makeCharacterRun(){
 //jumping animation for character
 function makeCharacterJump(){
 	// we remove running animation first before adding jumping animation
-	animateWithClass('remove', 'run');
 	animateWithClass('add', 'jump');
 
 	// remove jump class for landing, and go back to running
@@ -26,7 +25,6 @@ function makeCharacterJump(){
 // sliding animation
 function makeCharacterSlide(){
 	// we remove running animation first before adding sliding animation
-	animateWithClass('remove', 'run');
 	animateWithClass('add', 'slide');
 
 	// remove slide class, and go back to running
@@ -59,6 +57,12 @@ function animateWithClass(addOrRemove, action){
 // will add or remove appropriate class to appropriate body part for animation
 function addRemoveActionClass(bodyPart, action, addOrRemove){
 	if(addOrRemove == 'add'){
+		/* 
+			removes run class at the same time that we're adding a class to save
+			some time. This is benificial in most cases, with the exception of
+			adding back the running animation
+		*/
+		$('#' + bodyPart).removeClass(bodyPart + '-' + 'run');	
 		$('#' + bodyPart).addClass(bodyPart + '-' + action);
 	} else if(addOrRemove == 'remove'){
 		$('#' + bodyPart).removeClass(bodyPart + '-' + action);	
@@ -80,8 +84,8 @@ function backToDefaultAnim(action){
 	}, delay);	
 }
 
+// makes character explode after game has ended
 function explodeCharacter(){
-	animateWithClass('remove', 'run');
 	animateWithClass('remove', 'slide');
 	animateWithClass('remove', 'jump');
 	clearTimeout(backToDefaultTimer);
