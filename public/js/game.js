@@ -14,6 +14,7 @@ var numClouds;
 var clouds;
 var cloudsInterval;
 var counter;
+var removeTimer;
 
 function init(){
 	score = 0;
@@ -23,7 +24,10 @@ function init(){
 	gameSpeed = 2000;
 	counter = 0;
 
-	setupEvents();
+	// setupEvents();
+	// start and end the game at will
+	$('#start-button').on('click', startGame);
+	$('#stop-game-button').on('click', endGame);
 	setupBackground();
 }
 
@@ -45,17 +49,13 @@ function setupEvents(){
 	$('body').on('swiperight', function(){
 		animate('slide');
 	});
-
-	// start and end the game at will
-	$('#start-button').on('click', startGame);
-	$('#stop-game-button').on('click', endGame);
 }
 
 // places a new block into our game area, and removes it after leaving game area
 function getNextBlock(){
 	var newBlock;
 	var type;
-	var removeTimer = 1500;
+	removeTimer = 1500;
 		
 	collisionInterval = setInterval(detectCollision, 50);
 
@@ -89,6 +89,7 @@ function startGame(){
 
 	addRound();
 	setupInstructions();
+	setupEvents();
 	animate('run');
 	removeStartButton();
 }
@@ -102,6 +103,8 @@ function endGame(){
 
 	showGameOver();
 	changeStartText();
+
+	$('body').off();
 }
 
 // will detect if div surrounding character collides with a block
@@ -147,6 +150,8 @@ function detectCollision(){
 */
 function addRound(){
 	gameSpeed -= 100;
+	removeTimer -= 100;
+
 	round++;
 
 	clearInterval(newBlockInterval);
