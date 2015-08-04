@@ -50,6 +50,12 @@ main{
 	}
 }
 
+@-webkit-keyframes lower{
+	100%{
+		-webkit-transform: translateX(200px) translateY(50px);
+	}
+}
+
 .game-board{
 	height: 75%;
 	width: 100%;
@@ -103,9 +109,10 @@ main{
 }
 
 .instructions{
-	top: 40%;
+	top: 35%;
 	width: 5%;
 	left: 50%;
+	border-radius: 5px;
 	background-color: #eeeeee;
 	-webkit-transition: width 500ms linear, height500ms linear;
 }
@@ -120,7 +127,7 @@ main{
 
 .enlarge{
 	width: 80%;
-	height: 40%;
+	height: 30%;
 	left: 10%;
 }
 
@@ -137,6 +144,11 @@ main{
 
 .second-start-button{
 	left: 15%;
+}
+
+.lowered{
+	-webkit-animation: lower .5s linear forwards;
+	-webkit-transform: translate3d(0, 0, 0);
 }
 
 .instr-button{

@@ -6,10 +6,14 @@ var isMobile = window.matchMedia("only screen and (max-width: 991px)");
 function setupInstructions(){
 	checkIfMobile();
 
-	$('#start-button').hide();
 	$('#instr-button').hide();
 	$('.instructions').show();
-	$('.instructions').toggleClass('enlarge');
+	$('.instructions').addClass('enlarge');
+	$('#start-button').addClass('lowered');
+}
+
+function removeInstr(){
+	$('.instructions').hide();
 }
 
 function changeScoreText(score){
@@ -26,6 +30,8 @@ function changeRoundText(round){
 }
 
 function showGameOver(){
+	$('.instructions').removeClass('enlarge');
+	$('#start-button').removeClass('lowered');
 	$('#start-button').removeClass('first-start-button');
 	$('#start-button').addClass('second-start-button');
 	$('#start-button').toggle();

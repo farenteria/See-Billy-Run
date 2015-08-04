@@ -87,9 +87,9 @@ function startGame(){
 
 	changeScoreText(score);
 	changeRoundText(round);
+	removeInstr();
 
 	addRound();
-	setupInstructions();
 	setupEvents();
 	animate('run');
 	removeStartButton();
