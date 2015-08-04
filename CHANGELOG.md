@@ -1,6 +1,13 @@
 #Change log
 All notable changes to this project will be documented in this file
 
+## 1.3 / 2015-08-04
+### Added
+	- Instruction button
+### Bugs
+	- Instructions and start button need better placement for different display sizes
+	- Previous bugs apply
+
 ## 1.2 / 2015-07-28
 ### Added
 	- Screen size detection, and act accordingly
