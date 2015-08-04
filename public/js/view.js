@@ -6,11 +6,10 @@ var isMobile = window.matchMedia("only screen and (max-width: 991px)");
 function setupInstructions(){
 	checkIfMobile();
 
+	$('#start-button').hide();
+	$('#instr-button').hide();
 	$('.instructions').show();
-
-	setTimeout(function(){
-		$('.instructions').hide();
-	}, 2000);
+	$('.instructions').toggleClass('enlarge');
 }
 
 function changeScoreText(score){

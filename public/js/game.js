@@ -28,6 +28,7 @@ function init(){
 	// start and end the game at will
 	$('#start-button').on('click', startGame);
 	$('#stop-game-button').on('click', endGame);
+	$('#instr-button').on('click', setupInstructions);
 	setupBackground();
 }
 

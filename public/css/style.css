@@ -104,7 +104,10 @@ main{
 
 .instructions{
 	top: 40%;
-	width: 100%;
+	width: 5%;
+	left: 50%;
+	background-color: #eeeeee;
+	-webkit-transition: width 500ms linear, height500ms linear;
 }
 
 .mobile-instr{
@@ -115,9 +118,15 @@ main{
 	display: none;
 }
 
+.enlarge{
+	width: 80%;
+	height: 40%;
+	left: 10%;
+}
+
 .start-button{
-	left: 25%;
-	width: 50% !important;
+	left: 15%;
+	width: 25% !important;
 	font-size: 120%;
 	height: 25%;
 	padding: 0;
@@ -127,7 +136,18 @@ main{
 }
 
 .second-start-button{
-	left: 25%;
+	left: 15%;
+}
+
+.instr-button{
+	right: 15%;
+	width: 25% !important;
+	font-size: 120%;
+	height: 25%;
+	padding: 0;
+	border: none;
+	background-color: #488BE4;
+	top: 25%;
 }
 
 /*
@@ -226,7 +246,14 @@ main{
 	}
 
 	.start-button{
-		left: 26%;
+		left: 15%;
+		width: 30% !important;
+		font-size: 200%;
+	}
+
+	.instr-button{
+		right: 15%;
+		width: 30% !important;
 		font-size: 200%;
 	}
 }
@@ -239,8 +266,12 @@ main{
 	}
 
 	.start-button{
-		left: 33%;
-		width: 35% !important;
+		left: 15%;
+		font-size: 200%;
+	}
+
+	.instr-button{
+		right: 15%;
 		font-size: 200%;
 	}
 
